@@ -119,7 +119,10 @@
   # };
 
   # Flakes
-    nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  # GPG for GitHub signing
+  programs.gnupg.agent.enable = true;
 
   # Install Steam
   programs.steam = {
