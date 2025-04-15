@@ -121,8 +121,8 @@
   # Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # GPG for GitHub signing
-  programs.gnupg.agent.enable = true;
+  # Enable key-signing
+  programs.ssh.startAgent = true;
 
   # Install Steam
   programs.steam = {
