@@ -1,33 +1,8 @@
 { config, pkgs, ... }:
 
 {
-  # imports = [
-  #   inputs.nixcord.homeManagerModules.nixcord
-  # ];
-
   home.username = "n";
   home.homeDirectory = "/home/n";
-
-  # link the configuration file in current directory to the specified location in home directory
-  # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
-
-  # link all files in `./scripts` to `~/.config/i3/scripts`
-  # home.file.".config/i3/scripts" = {
-  #   source = ./scripts;
-  #   recursive = true;   # link recursively
-  #   executable = true;  # make all files executable
-  # };
-
-  # encode the file content in nix configuration file directly
-  # home.file.".xxx".text = ''
-  #     xxx
-  # '';
-
-  # set cursor size and dpi for 4k monitor
-  # xresources.properties = {
-  #   "Xcursor.size" = 16;
-  #   "Xft.dpi" = 172;
-  # };
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
@@ -132,6 +107,25 @@
         showHiddenThings.enable = true;
         showMeYourName.enable = true;
         showTimeoutDuration.enable = true;
+        silentMessageToggle.enable = true;
+        spotifyCrack.enable = true;
+        stickerPaste.enable = true;
+        translate.enable = true;
+        typingIndicator.enable = true;
+        typingTweaks.enable = true;
+        unindent.enable = true;
+        unsuppressEmbeds.enable = true;
+        userVoiceShow.enable = true;
+        validReply.enable = true;
+        validUser.enable = true;
+        vcNarrator.enable = true;
+        viewIcons.enable = true;
+        voiceDownload.enable = true;
+        volumeBooster.enable = true;
+        whoReacted.enable = true;
+        youtubeAdblock.enable = true;
+        webRichPresence.enable = true;
+        webScreenShareFixes.enable = true;
 
         openInApp = {
           enable = true;
