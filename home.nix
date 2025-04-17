@@ -6,10 +6,9 @@
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
-    # here is some command line tools I use frequently
-    # feel free to add your own or remove some of them
-
     fastfetch
+    lutris
+    wine
   ];
 
   programs.bash.enable = true;
@@ -48,6 +47,7 @@
 
   programs.nixcord = {
     enable = true;  # enable Nixcord. Also installs discord package
+    vesktop.enable = false;
     config = {
       themeLinks = [
         "https://raw.githubusercontent.com/Xhylo/Visual-Studio-Code-BD-theme/main/VSC-Cord.theme.css"
@@ -144,6 +144,8 @@
       };
     };
   };
+
+  services.arrpc.enable = true;
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
