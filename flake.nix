@@ -10,9 +10,13 @@
     nixcord = {
         url = "github:kaylorben/nixcord";
     };
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }: {
+  outputs = { nixpkgs, home-manager, ... }@inputs: {
     nixosConfigurations = {
       hostName = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -26,6 +30,7 @@
             home-manager.sharedModules = [
               inputs.nixcord.homeManagerModules.nixcord
             ];
+            home-manager.extraSpecialArgs = { inherit inputs; };
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
           }
         ];

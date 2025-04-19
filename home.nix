@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   home.username = "n";
@@ -8,10 +8,13 @@
   home.packages = with pkgs; [
     fastfetch
     lutris
-    wine
+    gale
+    qbittorrent
+    vlc
   ];
 
   programs.bash.enable = true;
+
   programs.git = {
     enable = true;
     userName  = "BackSlashN";
@@ -30,6 +33,25 @@
       dracula-theme.theme-dracula
       yzhang.markdown-all-in-one
       bbenoist.nix
+    ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+	    {
+	      name = "vscript-snippets";
+	      publisher = "Baptiste-Martinet";
+	      version = "1.0.4";
+	      sha256 = "jZ/h9nXaCz8cHcKKKFW6aevx6QdftfqBXungQ3CjwhU=";
+	    }
+	    {
+	      name = "vscript-debug";
+	      publisher = "LionDoge";
+	      version = "0.2.7";
+	      sha256 = "CXmSRIK+00bN0ONLuLeIgIMYeM3tqBJ7R6JhveIhv00=";
+	    }
+	    {
+	      name = "vscode-electricimp";
+	      publisher = "electricimp";
+	      version = "1.0.0";
+	      sha256 = "a23AfdrJTCQYj7vJCDYwdxe7MvoTfH8bGVjB92ktp7w=";
+	    }
     ];
   };
 
@@ -42,8 +64,14 @@
     ];
   };
 
-  # Install firefox.
-  programs.firefox.enable = true;
+  programs.firefox = {
+    enable = true;
+    profiles.n = {
+      extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
+        ublock-origin
+      ];
+    };
+  };
 
   programs.nixcord = {
     enable = true;  # enable Nixcord. Also installs discord package
