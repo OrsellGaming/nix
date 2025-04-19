@@ -11,6 +11,7 @@
     gale
     qbittorrent
     vlc
+    prismlauncher
   ];
 
   programs.bash.enable = true;
@@ -75,7 +76,7 @@
 
   programs.nixcord = {
     enable = true;  # enable Nixcord. Also installs discord package
-    vesktop.enable = false;
+    vesktop.enable = true;
     config = {
       themeLinks = [
         "https://raw.githubusercontent.com/Xhylo/Visual-Studio-Code-BD-theme/main/VSC-Cord.theme.css"
