@@ -12,6 +12,7 @@
     qbittorrent
     vlc
     prismlauncher
+    ida-free
   ];
 
   programs.bash.enable = true;

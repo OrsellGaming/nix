@@ -32,6 +32,10 @@
   networking.networkmanager.enable = true;
   networking.enableIPv6  = false;
 
+  # Enable Virt-manager
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
+
   # Set your time zone.
   time.timeZone = "America/New_York";
 
@@ -72,7 +76,7 @@
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
