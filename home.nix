@@ -13,6 +13,7 @@
     vlc
     prismlauncher
     ida-free
+    vpkedit
   ];
 
   programs.bash.enable = true;
