@@ -14,9 +14,16 @@
     prismlauncher
     ida-free
     vpkedit
+    zenity
+    jq
+    unzip
+    bottles
+    jdk21
+    quickemu
   ];
 
   programs.bash.enable = true;
+  # programs.java.enable = true;
 
   programs.git = {
     enable = true;
@@ -32,7 +39,7 @@
 
   programs.vscode = {
     enable = true;
-    extensions = with pkgs.vscode-extensions; [
+    profiles.default.extensions = with pkgs.vscode-extensions; [
       dracula-theme.theme-dracula
       yzhang.markdown-all-in-one
       bbenoist.nix
@@ -126,7 +133,7 @@
         pinDMs.enable = true;
         platformIndicators.enable = true;
         previewMessage.enable = true;
-        pronounDB.enable = true;
+        userMessagesPronouns.enable = true;
         relationshipNotifier.enable = true;
         revealAllSpoilers.enable = true;
         serverInfo.enable = true;
