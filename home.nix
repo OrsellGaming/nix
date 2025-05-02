@@ -23,7 +23,6 @@
   ];
 
   programs.bash.enable = true;
-  # programs.java.enable = true;
 
   programs.git = {
     enable = true;
