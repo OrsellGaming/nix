@@ -20,6 +20,8 @@
     bottles
     jdk21
     quickemu
+    unrar
+    gimp-with-plugins
   ];
 
   programs.bash.enable = true;
