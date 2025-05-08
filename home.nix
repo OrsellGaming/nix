@@ -166,6 +166,11 @@
         webRichPresence.enable = true;
         webScreenShareFixes.enable = true;
 
+        customIdle = {
+          enable = true;
+          idleTimeout = 0.0;
+        };
+
         openInApp = {
           enable = true;
           steam = true;

@@ -31,6 +31,7 @@
   # Enable networking
   networking.networkmanager.enable = true;
   networking.enableIPv6  = false;
+  networking.nameservers = [ "192.168.1.56" ];
 
   # Set your time zone.
   time.timeZone = "America/New_York";
