@@ -64,6 +64,10 @@
 	      sha256 = "a23AfdrJTCQYj7vJCDYwdxe7MvoTfH8bGVjB92ktp7w=";
 	    }
     ];
+
+    userSettings = {
+      "files.autoSave" = "onFocusChange";
+    };
   };
 
   programs.obs-studio = {
