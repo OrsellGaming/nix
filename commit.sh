@@ -2,5 +2,4 @@
 
 
 ssh-add ~/.ssh/github
-git commit -a
-git push
+lazygit

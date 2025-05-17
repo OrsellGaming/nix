@@ -1,12 +1,13 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, lib, ... }:
-{
+####
+{ config, pkgs, lib, ... }: {
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./hardware-configuration.nix
+      ./system-configuration/sddm.nix
+      ./system-configuration/kde.nix
     ];
 
   # Bootloader.
@@ -51,20 +52,6 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  # You can disable this if you're only using the Wayland session.
-  services.xserver.enable = true;
-
-  # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -94,7 +81,7 @@
   users.users.n = {
     isNormalUser = true;
     description = "n";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "adbusers" "libvirtd" ];
   };
 
   # Flakes
@@ -102,6 +89,12 @@
 
   # Enable key-signing
   programs.ssh.startAgent = true;
+  services.pcscd.enable = true;
+  programs.gnupg.agent = {
+    enable = true;
+    # pinentryPackage = "pinentry-gtk2";
+    enableSSHSupport = false;
+  };
 
   # Install Steam
   programs.steam = {
@@ -111,12 +104,29 @@
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game T>
   };
 
+  programs.adb.enable = true;
+
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    skia
+  ];
+
+  # Enable Virt-manager
+  virtualisation.libvirtd.enable = true;
+  virtualisation.spiceUSBRedirection.enable = true;
+  security.wrappers.spice-client-glib-usb-acl-helper.source = "${pkgs.spice-gtk}/bin/spice-client-glib-usb-acl-helper";
+  programs.virt-manager.enable = true;
+  # virtualisation.virtualbox.host.enable = true;
+  # virtualisation.virtualbox.host.enableExtensionPack = true;
+  # users.extraGroups.vboxusers.members = [ "n" ];
+
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
     wget
     protonup-qt
     tailscale
     gnupg
+    spice-gtk
     virt-manager
   ];
 

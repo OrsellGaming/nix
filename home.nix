@@ -1,4 +1,8 @@
-{ config, pkgs, inputs, ... }:
+{ config
+, pkgs
+, inputs
+, lib
+, ... }:
 
 {
   home.username = "n";
@@ -22,9 +26,17 @@
     quickemu
     unrar
     gimp-with-plugins
+    lazygit
+    sidequest
+    shotcut
   ];
 
   programs.bash.enable = true;
+
+  # packages.someDotnetApplication6 = {
+  #   pkgs.buildDotnetModule rec {
+  #     pname = "some_program"; version = "some_version"
+  #   };
 
   programs.git = {
     enable = true;
