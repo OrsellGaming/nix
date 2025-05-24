@@ -1,7 +1,7 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-####
+
 { config, pkgs, lib, ... }: {
   imports =
     [
@@ -88,7 +88,13 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Enable key-signing
-  programs.ssh.startAgent = true;
+  programs.ssh = {
+    startAgent = true;
+    extraConfig = ''
+    Host github.com
+      IdentityFile ~/.ssh/github
+    '';
+  };
   services.pcscd.enable = true;
   programs.gnupg.agent = {
     enable = true;

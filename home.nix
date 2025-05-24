@@ -29,6 +29,12 @@
     lazygit
     sidequest
     shotcut
+    ryubing
+    uget
+  ];
+
+  imports = [
+    # ./home-manager/yuzu.nix
   ];
 
   programs.bash.enable = true;
@@ -93,6 +99,7 @@
 
   programs.firefox = {
     enable = true;
+    nativeMessagingHosts = with pkgs; [ uget-integrator ];
     profiles.n = {
       extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
         ublock-origin
