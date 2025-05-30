@@ -8,6 +8,7 @@
       ./hardware-configuration.nix
       ./system-configuration/sddm.nix
       ./system-configuration/kde.nix
+      ./system-configuration/virtual-machines.nix
     ];
 
   # Bootloader.
@@ -117,23 +118,12 @@
     skia
   ];
 
-  # Enable Virt-manager
-  virtualisation.libvirtd.enable = true;
-  virtualisation.spiceUSBRedirection.enable = true;
-  security.wrappers.spice-client-glib-usb-acl-helper.source = "${pkgs.spice-gtk}/bin/spice-client-glib-usb-acl-helper";
-  programs.virt-manager.enable = true;
-  # virtualisation.virtualbox.host.enable = true;
-  # virtualisation.virtualbox.host.enableExtensionPack = true;
-  # users.extraGroups.vboxusers.members = [ "n" ];
-
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
     wget
     protonup-qt
     tailscale
     gnupg
-    spice-gtk
-    virt-manager
   ];
 
   # List services that you want to enable:
