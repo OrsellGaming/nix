@@ -16,11 +16,7 @@
     qbittorrent
     vlc
     prismlauncher
-    ida-free
     vpkedit
-    zenity
-    jq
-    unzip
     bottles
     jdk21
     quickemu
