@@ -27,7 +27,7 @@
 	    }
     ];
 
-    userSettings = {
+    profiles.default.userSettings = {
       "files.autoSave" = "onFocusChange";
 	  "editor.selectionClipboard" = false;
     };
