@@ -1,6 +1,6 @@
 { pkgs, lib, ... }:
 let
-  wallpaperImg = ../wallpapers/Illustration156.png;
+  wallpaperImg = ../../wallpapers/Illustration156.png;
 in {
 
     home.packages = with pkgs; [
@@ -14,6 +14,8 @@ in {
         wl-clipboard
         libnotify
         dunst
+        nerd-fonts.caskaydia-cove
+        font-awesome
     ];
 
     wayland.windowManager.hyprland = {
@@ -35,8 +37,21 @@ in {
                 "SUPER, SUPER_L, exec, pkill rofi || rofi -show drun"
                 "$mod, q, exec, $terminal"
                 ", Print, exec, ~/.config/hypr/scripts/screenshot rc"
-                "alt, f4, killactive"
+                "control, w, killactive"
+
+                # Workspaces
+                "control, 1, workspace, 1"
+                "control, 2, workspace, 2"
+                "control, 3, workspace, 3"
+                "control, 4, workspace, 4"
+                "control, 5, workspace, 5"
             ];
+
+            input = {
+                # "name" = "sigmachip-usb-mouse";
+                "sensitivity" = "0.2";
+                "accel_profile" = "flat";
+            };
         };
     };
     programs.waybar.enable = true;
@@ -48,6 +63,14 @@ in {
         };
     };
 
+    # Waybar configuration
+    fonts.fontconfig.enable = true;
+    home.file.".config/waybar" = {
+        source =  ./waybar; 
+        recursive = true;
+    };
+
+    # Screenshots
     home.file.".config/hypr/scripts/screenshot" = {
         executable = true;
         text = ''
