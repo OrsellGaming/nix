@@ -4,7 +4,6 @@ let
 in {
 
     home.packages = with pkgs; [
-        kitty
         hyprpolkitagent
         rofi
         hyprpaper
@@ -16,6 +15,7 @@ in {
         dunst
         nerd-fonts.caskaydia-cove
         font-awesome
+        lm_sensors
     ];
 
     wayland.windowManager.hyprland = {
@@ -45,12 +45,40 @@ in {
                 "control, 3, workspace, 3"
                 "control, 4, workspace, 4"
                 "control, 5, workspace, 5"
+                "control, 6, workspace, 6"
+                "control, 7, workspace, 7"
+                "control, 8, workspace, 8"
+                "control, 9, workspace, 9"
             ];
 
             input = {
                 # "name" = "sigmachip-usb-mouse";
                 "sensitivity" = "0.2";
                 "accel_profile" = "flat";
+            };
+
+            general = {
+                "col.active_border" = "rgba(27F274ee) rgba(3BFFFFee) 45deg";
+                "col.inactive_border" = "rgba(ffff50ee) rgba(c97d2dee) 45deg";
+                "border_size" = "5";
+                "resize_on_border" = "true";
+                "extend_border_grab_area" = "10";
+                "hover_icon_on_border" = "true";
+            };
+
+            decoration = {
+                "rounding" = "5";
+                "rounding_power" = "4";
+                "inactive_opacity" = "0.9";
+                shadow = {
+                    "enabled" = "true";
+                    "range" = "10";
+                    "color" = "rgb(0, 0, 0)";
+                };
+            };
+
+            misc = {
+                "focus_on_activate" = "true";
             };
         };
     };

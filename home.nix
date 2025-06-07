@@ -35,6 +35,7 @@
     ./home-manager/nixcord.nix
     ./home-manager/obs.nix
     ./home-manager/vscode.nix
+    ./home-manager/kitty.nix
     ./home-manager/hyprland/hyprland.nix
   ];
 
