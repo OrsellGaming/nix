@@ -9,6 +9,7 @@
       ./system-configuration/bootloader.nix
       ./system-configuration/sddm.nix
       ./system-configuration/kde.nix
+      # ./system-configuration/hyprland.nix
       ./system-configuration/virtual-machines.nix
     ];
 
@@ -24,6 +25,9 @@
   networking.enableIPv6  = false;
   networking.nameservers = [ "192.168.1.56" ];
 
+  programs.hyprland.enable = true;
+
+  security.polkit.enable = true;
   # Set your time zone.
   time.timeZone = "America/New_York";
 
@@ -67,9 +71,10 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  # Define a user account.
   users.users.n = {
     isNormalUser = true;
+    initialPassword = "n"; # CHANGE THIS AFTER INSTALL!!
     description = "n";
     extraGroups = [ "networkmanager" "wheel" "adbusers" "libvirtd" ];
   };
