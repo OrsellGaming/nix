@@ -86,6 +86,10 @@ in {
             misc = {
                 "focus_on_activate" = "true";
             };
+
+            windowrule = [
+                "opacity .95 override .95,class:Code"
+            ];
         };
     };
     programs.waybar.enable = true;
