@@ -25,11 +25,22 @@
 	      version = "1.0.0";
 	      sha256 = "a23AfdrJTCQYj7vJCDYwdxe7MvoTfH8bGVjB92ktp7w=";
 	    }
+	    {
+	      name = "better-comments";
+	      publisher = "aaron-bond";
+	      version = "3.0.2";
+	      sha256 = "hQmA8PWjf2Nd60v5EAuqqD8LIEu7slrNs8luc3ePgZc=";
+	    }
     ];
 
     profiles.default.userSettings = {
       "files.autoSave" = "onFocusChange";
 	  "editor.selectionClipboard" = false;
     };
+  };
+
+  home.file.".config/Code/User/snippets/p2mm.code-snippets" = {
+	source = ./code-snippets/p2mm;
+	recursive = false;
   };
 }

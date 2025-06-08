@@ -1,0 +1,44 @@
+{
+	"Try-Catch": {
+		"prefix": "try",
+		"body": [
+			"try {",
+			"$2",
+			"} catch (exception) {",
+			"   ",
+			"}",
+			"$0"
+		],
+		"description": "Simple 'try catch' for program control."
+	},
+
+	"P2MM Log": {
+		"prefix": "printlP2MM",
+		"body": [
+			"printlP2MM(${1:level}, ${2:dev}, ${3:message})"
+		],
+		"description": "Log function for VScript in the Portal 2: Multiplayer Mod."
+	},
+
+	"DoEntFire": {
+		"prefix": "DoEntFire",
+		"body": [
+			"DoEntFire(${1:target}, ${2:action}, ${3:value}, ${4:delay}, ${5:activator}, ${6:caller})"
+		]
+	},
+
+    "HudPrint": {
+        "prefix": "HudPrint",
+        "body": [
+            "HudPrint(${1:playerIndex}, ${2:msg}, Vector(${3:x}, ${4:y}, ${5:channel}), ${6:effect}, ${7:fxTime}, Vector(${8:r1}, ${9:g1}, ${10:b1}), ${11:alpha1}, Vector(${12:r2}, ${13:g2}, ${14:b2}), ${15:alpha2}, Vector(${16:fadeinTime}, ${17:fadeoutTime}, ${18:holdTime}))"
+        ],
+        "description": "Print game_text like message to a players hud by their index."
+    },
+
+    "TraceLineEx": {
+        "prefix": "TraceLineEx",
+        "body": [
+            "TraceLineEx(${1:vecAbsStart}, ${2:vecAbsEnd} , ${3:mask}, ${4:ignore}, ${5:collisionGroup}"
+        ]
+    }
+}
