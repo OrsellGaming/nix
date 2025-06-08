@@ -1,11 +1,29 @@
-{...}:
+{pkgs, lib, ...}:
+let
+  croppedWallpaperDrv = import ./crop.nix { inherit pkgs lib; };
+  png = "${croppedWallpaperDrv}";
+
+in
 {
+  # vencord theme
+  home.file = {
+    ".config/vesktop/themes/source.css" = {
+      source = ./theme/source.css;
+    };
+    ".config/vesktop/themes/wallpaper.png" = {
+      source = png;
+    };
+  };
+
   programs.nixcord = {
     enable = true;  # enable Nixcord. Also installs discord package
     vesktop.enable = true;
     config = {
-      themeLinks = [
-        "https://raw.githubusercontent.com/Xhylo/Visual-Studio-Code-BD-theme/main/VSC-Cord.theme.css"
+      # themeLinks = [
+      #   "https://raw.githubusercontent.com/Xhylo/Visual-Studio-Code-BD-theme/main/VSC-Cord.theme.css"
+      # ];
+      enabledThemes = [
+        "source.css"
       ];
       plugins = {
         betterGifPicker.enable = true;

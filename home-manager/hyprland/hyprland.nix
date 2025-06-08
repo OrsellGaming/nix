@@ -1,6 +1,6 @@
 { pkgs, lib, ... }:
 let
-  wallpaperImg = ../../wallpapers/Illustration156.png;
+  wallpaperImg = ../../wallpapers/wallpaper.png;
 in {
 
     home.packages = with pkgs; [

@@ -32,7 +32,7 @@
   imports = [
     ./home-manager/firefox.nix
     ./home-manager/git.nix
-    ./home-manager/nixcord.nix
+    ./home-manager/nixcord/nixcord.nix
     ./home-manager/obs.nix
     ./home-manager/vscode.nix
     ./home-manager/kitty.nix
