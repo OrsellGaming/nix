@@ -37,7 +37,7 @@ in {
                 "SUPER, SUPER_L, exec, pkill rofi || rofi -show drun"
                 "$mod, q, exec, $terminal"
                 ", Print, exec, ~/.config/hypr/scripts/screenshot rc"
-                "control, w, killactive"
+                "alt, w, killactive"
 
                 # Workspaces
                 "control, 1, workspace, 1"
