@@ -49,7 +49,13 @@ in {
                 "control, 7, workspace, 7"
                 "control, 8, workspace, 8"
                 "control, 9, workspace, 9"
+                "control, mouse_down, workspace, e-1"
+                "control, mouse_up, workspace, e+1"
             ];
+
+            binds = {
+                "scroll_event_delay" = "0";
+            };
 
             input = {
                 # "name" = "sigmachip-usb-mouse";
