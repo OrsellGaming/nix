@@ -17,12 +17,17 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, flake-utils, home-manager, ... }@inputs: {
     nixosConfigurations = {
-      hostName = nixpkgs.lib.nixosSystem {
+      desktop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
         modules = [
           ./configuration.nix
           home-manager.nixosModules.home-manager
