@@ -49,8 +49,8 @@ in {
                 "control, 7, workspace, 7"
                 "control, 8, workspace, 8"
                 "control, 9, workspace, 9"
-                "control, mouse_down, workspace, e-1"
-                "control, mouse_up, workspace, e+1"
+                "alt, mouse_down, workspace, e-1"
+                "alt, mouse_up, workspace, e+1"
             ];
 
             binds = {
@@ -107,6 +107,9 @@ in {
         source =  ./waybar; 
         recursive = true;
     };
+
+    # Lock screen
+    programs.hyprlock.enable = true;
 
     # Screenshots
     home.file.".config/hypr/scripts/screenshot" = {
