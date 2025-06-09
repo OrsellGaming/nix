@@ -36,8 +36,15 @@
     ./home-manager/obs.nix
     ./home-manager/vscode/vscode.nix
     ./home-manager/kitty.nix
+    ./home-manager/nh.nix
     ./home-manager/hyprland/hyprland.nix
   ];
+
+  xdg.mimeApps.defaultApplications = {
+    "text/plain" = ["code.desktop"];
+    "image/*" = ["gimp.desktop"];
+    "video/*" = ["vlc.desktop"];
+  };
 
   programs.bash.enable = true;
 
