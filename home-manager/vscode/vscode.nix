@@ -39,8 +39,8 @@
     };
   };
 
-  home.file.".config/Code/User/snippets/p2mm.code-snippets" = {
-	source = ./code-snippets/p2mm;
-	recursive = false;
+  home.file.".config/Code/User/snippets/" = {
+	source = ./code-snippets;
+	recursive = true;
   };
 }
