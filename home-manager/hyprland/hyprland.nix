@@ -26,6 +26,9 @@ in {
             exec-once = [
                 "waybar"
                 "systemctl --user start hyprpolkitagent"
+                "[workspace 1 silent] code"
+                "[workspace 2 silent] firefox"
+                "[workspace 5 silent] kitty"
             ];
 
             "monitor" = "HDMI-A-1, 1920x1080@60, 0x0, 1";
