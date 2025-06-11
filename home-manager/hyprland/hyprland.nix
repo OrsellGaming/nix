@@ -76,14 +76,14 @@ in {
             };
 
             decoration = {
-                "rounding" = "5";
-                "rounding_power" = "4";
-                "inactive_opacity" = "0.9";
-                shadow = {
-                    "enabled" = "true";
-                    "range" = "10";
-                    "color" = "rgb(0, 0, 0)";
-                };
+                # "rounding" = "5";
+                # "rounding_power" = "4";
+                # "inactive_opacity" = "0.9";
+                # shadow = {
+                #     "enabled" = "true";
+                #     "range" = "10";
+                #     "color" = "rgb(0, 0, 0)";
+                # };
             };
 
             misc = {
