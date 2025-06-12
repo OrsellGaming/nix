@@ -37,7 +37,9 @@ in {
             "$fileManager" = "dolphin";
 
             bind = [
+                # Application menu
                 "SUPER, SUPER_L, exec, pkill rofi || rofi -show drun"
+
                 "$mod, q, exec, $terminal"
                 ", Print, exec, ~/.config/hypr/scripts/screenshot rc"
                 "alt, w, killactive"
@@ -54,10 +56,19 @@ in {
                 "control, 9, workspace, 9"
                 "alt, mouse_down, workspace, e-1"
                 "alt, mouse_up, workspace, e+1"
+
+                # Floating windows
+                "alt, f, togglefloating"
+            ];
+
+            bindm = [
+                # Floating windows
+                "alt, mouse:272, movewindow"
             ];
 
             binds = {
                 "scroll_event_delay" = "0";
+                "drag_threshold" = "10";
             };
 
             input = {
