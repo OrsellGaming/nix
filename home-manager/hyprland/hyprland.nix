@@ -64,6 +64,7 @@ in {
                 # "name" = "sigmachip-usb-mouse";
                 "sensitivity" = "0.2";
                 "accel_profile" = "flat";
+                "follow_mouse" = "2";
             };
 
             general = {
