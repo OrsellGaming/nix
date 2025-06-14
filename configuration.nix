@@ -105,6 +105,13 @@
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game T>
   };
+  hardware.steam-hardware.enable = true; # VR
+
+  programs.alvr = {
+    enable = true;
+    # package = unstable.alvr;
+    openFirewall = true;
+  };
 
   programs.adb.enable = true;
 
