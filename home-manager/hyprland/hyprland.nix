@@ -79,8 +79,9 @@ in {
             };
 
             general = {
-                "col.active_border" = "rgba(27F274ee) rgba(3BFFFFee) 45deg";
-                "col.inactive_border" = "rgba(ffff50ee) rgba(c97d2dee) 45deg";
+                "col.active_border" = "rgb(27F274) rgb(3BFFFF) 45deg";
+                "col.inactive_border" = "rgb(ffff50) rgb(c97d2d) 45deg";
+
                 "border_size" = "5";
                 "resize_on_border" = "true";
                 "extend_border_grab_area" = "10";
@@ -104,6 +105,7 @@ in {
 
             windowrule = [
                 "opacity .95 override .95,class:Code"
+                "bordercolor rgb(6600a1) rgb(ff5100) 0deg rgb(6600a1) rgb(ff5100) 0deg,floating:1"
             ];
         };
     };
