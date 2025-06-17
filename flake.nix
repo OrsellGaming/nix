@@ -32,6 +32,7 @@
           ./configuration.nix
           home-manager.nixosModules.home-manager
           {
+            home-manager.backupFileExtension = "backup";
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.n = import ./home.nix;
