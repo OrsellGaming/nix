@@ -20,16 +20,16 @@
     bottles
     jdk21
     quickemu
-    unrar
     gimp-with-plugins
     lazygit
     sidequest
-    shotcut
-    ryubing
     uget
+    mpv
+    yazi
   ];
 
   imports = [
+    # ./home-manager/default-applications.nix
     ./home-manager/firefox.nix
     ./home-manager/git.nix
     ./home-manager/nixcord/nixcord.nix
@@ -40,11 +40,6 @@
     ./home-manager/hyprland/hyprland.nix
   ];
 
-  xdg.mimeApps.defaultApplications = {
-    "text/plain" = ["code.desktop"];
-    "image/*" = ["gimp.desktop"];
-    "video/*" = ["vlc.desktop"];
-  };
 
   programs.bash.enable = true;
 
