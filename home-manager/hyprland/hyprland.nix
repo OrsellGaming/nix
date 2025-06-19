@@ -1,12 +1,14 @@
 { pkgs, lib, ... }:
 let
+  wallpaper = ../../wallpapers/wallpaper-animated.mp4;
   wallpaperImg = ../../wallpapers/wallpaper.png;
 in {
 
     home.packages = with pkgs; [
         hyprpolkitagent
         rofi
-        hyprpaper
+        # hyprpaper
+        mpvpaper
         grim
         slurp
         swappy
@@ -26,6 +28,7 @@ in {
             exec-once = [
                 "waybar"
                 "systemctl --user start hyprpolkitagent"
+                ''mpvpaper --mpv-options "--loop-file=inf" ALL ${wallpaper}''
                 "[workspace 1 silent] code"
                 "[workspace 2 silent] firefox"
                 "[workspace 5 silent] kitty"
@@ -110,16 +113,16 @@ in {
             ];
         };
     };
-    programs.waybar.enable = true;
-    services.hyprpaper = {
-        enable = true;
-        settings = {
-            "preload" = "${wallpaperImg}";
-            "wallpaper" = ", ${wallpaperImg}";
-        };
-    };
+    # services.hyprpaper = {
+    #     enable = true;
+    #     settings = {
+    #         "preload" = "${wallpaperImg}";
+    #         "wallpaper" = ", ${wallpaperImg}";
+    #     };
+    # };
 
     # Waybar configuration
+    programs.waybar.enable = true;
     fonts.fontconfig.enable = true;
     home.file.".config/waybar" = {
         source =  ./waybar; 
