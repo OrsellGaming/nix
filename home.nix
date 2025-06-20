@@ -10,7 +10,6 @@
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
-    fastfetch
     lutris
     gale
     qbittorrent
@@ -33,15 +32,14 @@
     ./home-manager/firefox.nix
     ./home-manager/git.nix
     ./home-manager/nixcord/nixcord.nix
+    ./home-manager/bash.nix
+    ./home-manager/fastfetch/fastfetch.nix
     ./home-manager/obs.nix
     ./home-manager/vscode/vscode.nix
     ./home-manager/kitty.nix
     ./home-manager/nh.nix
     ./home-manager/hyprland/hyprland.nix
   ];
-
-
-  programs.bash.enable = true;
 
   # packages.someDotnetApplication6 = {
   #   pkgs.buildDotnetModule rec {
