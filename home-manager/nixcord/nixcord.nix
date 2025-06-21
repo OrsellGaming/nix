@@ -1,17 +1,9 @@
 {pkgs, lib, ...}:
-let
-  croppedWallpaperDrv = import ./crop.nix { inherit pkgs lib; };
-  png = "${croppedWallpaperDrv}";
-
-in
 {
   # vencord theme
   home.file = {
     ".config/vesktop/themes/source.css" = {
-      source = ./theme/source.css;
-    };
-    ".config/vesktop/themes/wallpaper.png" = {
-      source = png;
+      source = ./source.css;
     };
   };
 
@@ -120,6 +112,7 @@ in
           hideMessageRequestCount = false;
         };
       };
+      transparent = true;
     };
   };
 
