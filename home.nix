@@ -14,7 +14,6 @@
     gale
     qbittorrent
     vlc
-    prismlauncher
     vpkedit
     bottles
     jdk21
@@ -25,6 +24,7 @@
     uget
     mpv
     yazi
+    modrinth-app
   ];
 
   imports = [
