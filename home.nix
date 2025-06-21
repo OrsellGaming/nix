@@ -25,6 +25,7 @@
     mpv
     yazi
     modrinth-app
+    pavucontrol
   ];
 
   imports = [
