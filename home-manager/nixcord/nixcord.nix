@@ -2,8 +2,9 @@
 {
   # vencord theme
   home.file = {
-    ".config/vesktop/themes/source.css" = {
-      source = ./source.css;
+    ".config/vesktop/themes" = {
+      source = ./theme;
+      recursive = true;
     };
   };
 
@@ -16,6 +17,10 @@
       # ];
       enabledThemes = [
         "source.css"
+        "betterusertags.theme.css"
+        "pingedserversfirst.theme.css"
+        "randomfixes.theme.css"
+        "shadows.theme.css"
       ];
       plugins = {
         betterGifPicker.enable = true;

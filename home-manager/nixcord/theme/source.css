@@ -54,7 +54,6 @@ body { background: center/cover var(--nvbgimg) !important; }
 [class^=container_] > [class^=container_] > section, /*stage channel request to speak top bar*/
 [class^=title_], /*top toolbar*/
 [class^=children_]::after, /*toolbar overflow fadeout*/
-[class^=panels_], /*user panel*/
 [class^=chatContent_] > [class^=form_], /*chat input area in visual refresh*/
 [class^=channelTextArea_], /*chat input*/
 [class^=channelTextArea_] [class^=scrollableContainer_], /*chat input again*/

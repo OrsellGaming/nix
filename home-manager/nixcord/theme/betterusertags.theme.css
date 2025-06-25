@@ -1,0 +1,26 @@
+/**
+ * @name betterusertags
+ * @author nvhhr
+ * @description better bot/staff tags and newleaf replacement
+*/
+
+[class^=botTagCompact_], /*remove tags in reply previews*/
+[class^=newMemberBadge_] /*remove newleaf icon*/
+ { display: none; }
+
+/*restyle tags*/
+[class*=botTag_]:not([class^=nitroBadge]),
+[id^=message-username-]:has([class^=newMemberBadge_])::after
+ { color: rgb(255, 94, 0);
+   font: bold .8em var(--font-primary);
+   margin-left: 1ch;
+   padding: .15em 1ch;
+   border-radius: 1em;
+   height: 1rem; }
+[class*=botText_]
+ { font-weight: inherit; }
+
+/*create tag in place of newleaf*/
+[id^=message-username-]:has([class^=newMemberBadge_])::after
+ { content: "NEW";
+   background: oklch(90.12 0.157 188.22); }
