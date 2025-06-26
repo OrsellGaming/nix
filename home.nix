@@ -32,7 +32,7 @@
     # ./home-manager/default-applications.nix
     ./home-manager/firefox.nix
     ./home-manager/git.nix
-    ./home-manager/nixcord/nixcord.nix
+    ./home-manager/discord/nixcord.nix
     ./home-manager/bash.nix
     ./home-manager/fastfetch/fastfetch.nix
     ./home-manager/obs.nix

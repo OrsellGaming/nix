@@ -12,7 +12,7 @@
    --scrollbar-auto-track: transparent; } 
 
 /*we'll set the background image at the very bottom*/
-body { background: center/cover var(--nvbgimg) !important; }
+body { background: none !important; }
 /*add the toning layer..*/
 #app-mount { background: var(--nvbgadjust) !important; }
 
