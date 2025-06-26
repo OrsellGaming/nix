@@ -30,16 +30,16 @@
 
   imports = [
     # ./home-manager/default-applications.nix
+    ./home-manager/bash.nix
     ./home-manager/firefox.nix
     ./home-manager/git.nix
-    ./home-manager/discord/nixcord.nix
-    ./home-manager/bash.nix
-    ./home-manager/fastfetch/fastfetch.nix
-    ./home-manager/obs.nix
-    ./home-manager/vscode/vscode.nix
     ./home-manager/kitty.nix
     ./home-manager/nh.nix
+    ./home-manager/obs.nix
+    ./home-manager/discord/nixcord.nix
+    ./home-manager/fastfetch/fastfetch.nix
     ./home-manager/hyprland/hyprland.nix
+    ./home-manager/vscode/vscode.nix
   ];
 
   # packages.someDotnetApplication6 = {

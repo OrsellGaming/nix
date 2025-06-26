@@ -8,11 +8,9 @@
       ./hardware-configuration.nix
       ./system-configuration/bootloader.nix
       ./system-configuration/greeter/greeter.nix
-      # ./system-configuration/sddm.nix
-      # ./system-configuration/kde.nix
-      ./system-configuration/virtual-machines.nix
-      ./system-configuration/tailscale.nix
       ./system-configuration/sops/sops.nix
+      ./system-configuration/tailscale.nix
+      ./system-configuration/virtual-machines.nix
     ];
 
   networking.hostName = "desktop"; # Define your hostname.
