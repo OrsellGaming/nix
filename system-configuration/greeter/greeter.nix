@@ -20,5 +20,14 @@
       # package = pkgs.sddm;
     };
   };
+  # environment.etc."greetd/gtkgreet.toml" = {
+  #   text = ''
+  #     window {
+  #       background-image: url("file://${lockscreen-image}");
+  #       background-size: cover;
+  #       background-position: center;
+  #     }
+  #   '';
+  # };
   # systemd.services.displayManager
 }

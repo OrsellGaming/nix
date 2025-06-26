@@ -7,7 +7,7 @@
     [
       ./hardware-configuration.nix
       ./system-configuration/bootloader.nix
-      ./system-configuration/greeter.nix
+      ./system-configuration/greeter/greeter.nix
       # ./system-configuration/sddm.nix
       # ./system-configuration/kde.nix
       ./system-configuration/virtual-machines.nix
