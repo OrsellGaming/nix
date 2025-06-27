@@ -23,7 +23,6 @@
     sidequest
     uget
     mpv
-    yazi
     modrinth-app
     pavucontrol
   ];
@@ -36,6 +35,7 @@
     ./home-manager/kitty.nix
     ./home-manager/nh.nix
     ./home-manager/obs.nix
+    ./home-manager/yazi.nix
     ./home-manager/discord/nixcord.nix
     ./home-manager/fastfetch/fastfetch.nix
     ./home-manager/hyprland/hyprland.nix
