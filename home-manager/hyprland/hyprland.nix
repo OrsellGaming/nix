@@ -18,7 +18,15 @@ in {
     nerd-fonts.caskaydia-cove
     font-awesome
     lm_sensors
+    catppuccin-cursors.mochaSapphire
   ];
+
+  home.pointerCursor = {
+    gtk.enable = true;
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Amber";
+    size = 24;
+  };
 
   wayland.windowManager.hyprland = {
     enable = true;
