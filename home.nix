@@ -25,6 +25,7 @@
     mpv
     modrinth-app
     pavucontrol
+    kdePackages.kdenlive
   ];
 
   imports = [
