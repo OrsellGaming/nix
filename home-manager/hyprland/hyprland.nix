@@ -1,8 +1,10 @@
 { pkgs, lib, ... }:
-let
-  wallpaper = ../../wallpapers/wallpaper-animated.mp4;
-  wallpaperImg = ../../wallpapers/wallpaper.png;
-in {
+{
+  # WALLPAPERS
+  home.file.".wallpapers" = {
+    source = ../../wallpapers;
+    recursive = true;
+  };
 
   home.packages = with pkgs; [
     hyprpolkitagent
@@ -36,7 +38,7 @@ in {
       exec-once = [
         "waybar"
         "systemctl --user start hyprpolkitagent"
-        ''mpvpaper --mpv-options "--loop-file=inf" ALL ${wallpaper}''
+        ''mpvpaper --mpv-options "--loop-file=300 --loop-playlist=inf --reset-on-next-file=loop-file" ALL ~/.wallpapers/playlist.m3u''
         "[workspace 1 silent] code"
         "[workspace 2 silent] firefox"
         "[workspace 5 silent] kitty"
@@ -51,9 +53,17 @@ in {
         # Application menu
         "SUPER, SUPER_L, exec, pkill rofi || rofi -show drun"
 
+        # Terminal Shortcut
         "$mod, q, exec, $terminal"
+
+        # Selective Screenshot
         ", Print, exec, ~/.config/hypr/scripts/screenshot rc"
+
+        # Close Window
         "alt, w, killactive"
+
+        # OBS Clip Hotkey
+        ", F8, pass, class:^(com\.obsproject\.Studio)$"
 
         # Workspaces
         "control, 1, workspace, 1"
@@ -121,13 +131,6 @@ in {
       ];
     };
   };
-  # services.hyprpaper = {
-  #   enable = true;
-  #   settings = {
-  #     "preload" = "${wallpaperImg}";
-  #     "wallpaper" = ", ${wallpaperImg}";
-  #   };
-  # };
 
   # Waybar configuration
   programs.waybar.enable = true;
@@ -158,11 +161,11 @@ in {
         ];
       };
 
-      background = {
-        monitor = "";
-        path = "${wallpaperImg}";
-        blur_passes = 3;
-      };
+      # background = {
+      #   monitor = "";
+      #   path = "${wallpaper-static}";
+      #   blur_passes = 3;
+      # };
 
       input-field = [
         {

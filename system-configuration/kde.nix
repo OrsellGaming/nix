@@ -1,6 +1,6 @@
 {config, ...}:
 let
-  wallpaperImg = ../wallpapers/wallpaper.png;
+  wallpaperImg = ../wallpapers/connor.png;
 in {
   # KDE Plasma configuration
   services.desktopManager.plasma6.enable = true;
