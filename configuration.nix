@@ -10,6 +10,8 @@
       ./system-configuration/greeter/greeter.nix
       ./system-configuration/sops/sops.nix
       ./system-configuration/tailscale.nix
+      # ./system-configuration/kde.nix
+      # ./system-configuration/sddm.nix
       ./system-configuration/virtual-machines.nix
     ];
 
@@ -104,12 +106,17 @@
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game T>
   };
-  hardware.steam-hardware.enable = true; # VR
-
-  programs.alvr = {
+  hardware.steam-hardware.enable = true;
+  hardware.graphics = {
     enable = true;
-    # package = unstable.alvr;
+    enable32Bit = true;
+  };
+
+  # VR
+  services.wivrn = {
+    enable = true;
     openFirewall = true;
+    defaultRuntime = true;
   };
 
   programs.adb.enable = true;
@@ -126,7 +133,6 @@
     tailscale
     gnupg
   ];
-
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.

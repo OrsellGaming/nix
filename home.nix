@@ -13,20 +13,43 @@
     lutris
     gale
     qbittorrent
-    vlc
     vpkedit
-    bottles
-    jdk21
-    quickemu
+    bottles # Wine
+    jdk21 # Java
+    quickemu # Easy VM management
     gimp-with-plugins
     lazygit
     sidequest
     uget
-    mpv
+    mpv # Media Player
     modrinth-app
-    pavucontrol
-    kdePackages.kdenlive
+    pavucontrol # Volume Control
+    kdePackages.kdenlive # Video Editor
+    bs-manager # Beat Saber Mod Manager
   ];
+
+  # EXTRA VR CONFIG
+  xdg.configFile."openxr/1/active_runtime.json".source = "${pkgs.wivrn}/share/openxr/1/openxr_wivrn.json";
+
+  xdg.configFile."openvr/openvrpaths.vrpath".text = ''
+    {
+      "config" :
+      [
+        "${config.xdg.dataHome}/Steam/config"
+      ],
+      "external_drivers" : null,
+      "jsonid" : "vrpathreg",
+      "log" :
+      [
+        "${config.xdg.dataHome}/Steam/logs"
+      ],
+      "runtime" :
+      [
+        "${pkgs.opencomposite}/lib/opencomposite"
+      ],
+      "version" : 1
+    }
+  '';
 
   imports = [
     # ./home-manager/default-applications.nix
