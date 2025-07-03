@@ -7,17 +7,16 @@
   };
 
   home.packages = with pkgs; [
-    hyprpolkitagent
-    rofi
-    # hyprpaper
-    mpvpaper
-    grim
+    hyprpolkitagent # Authentication Manager
+    rofi # App Launcher
+    mpvpaper # Video Wallpaper Manager
+    grim # Screenshot utils
     slurp
     swappy
     wl-clipboard
     nerd-fonts.caskaydia-cove
     font-awesome
-    lm_sensors
+    lm_sensors # Stats for waybar
     catppuccin-cursors.mochaSapphire
     jq
   ];
