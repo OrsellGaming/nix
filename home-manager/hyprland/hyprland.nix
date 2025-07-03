@@ -144,6 +144,12 @@
       # Keep overlay workspace
       bind=$mod, d, togglespecialworkspace, magic
 
+      # OBS Clip Hotkey
+      bind=, F8, pass, class:^(com\.obsproject\.Studio)$
+
+      # Full Screenshot
+      bind=, Print, exec, ~/.config/hypr/scripts/screenshot sc
+
       # End of special bind set
       submap = reset
     '';
