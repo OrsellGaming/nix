@@ -47,7 +47,6 @@
       "monitor" = "HDMI-A-1, 1920x1080@60, 0x0, 1";
       "$terminal" = "kitty";
       "$mod" = "alt";
-      "$fileManager" = "dolphin";
 
       bind = [
         # Application menu
@@ -64,6 +63,10 @@
 
         # OBS Clip Hotkey
         ", F8, pass, class:^(com\.obsproject\.Studio)$"
+
+        # Overlayed workspace (like steam ingame overlay)
+        "$mod, d, togglespecialworkspace, magic"
+        "$mod SHIFT, d, movetoworkspace, special:magic"
 
         # Workspaces
         "control, 1, workspace, 1"
@@ -130,6 +133,22 @@
         "bordercolor rgb(6600a1) rgb(ff5100) 0deg rgb(6600a1) rgb(ff5100) 0deg,floating:1"
       ];
     };
+    extraConfig = ''
+      # Toggle ignoring non-special workspace binds
+      bind=$mod, ESCAPE, exec, notify-send "Game mode enabled!"
+      bind=$mod, ESCAPE, submap, gamemode
+      submap = gamemode
+
+      # Toggle off
+      bind=$mod, ESCAPE, exec, notify-send "Game mode disabled!"
+      bind=$mod, ESCAPE, submap, reset
+
+      # Keep overlay workspace
+      bind=$mod, d, togglespecialworkspace, magic
+
+      # End of special bind set
+      submap = reset
+    '';
   };
 
   # Waybar configuration
