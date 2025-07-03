@@ -15,8 +15,6 @@
     slurp
     swappy
     wl-clipboard
-    libnotify
-    dunst
     nerd-fonts.caskaydia-cove
     font-awesome
     lm_sensors
@@ -135,12 +133,12 @@
     };
     extraConfig = ''
       # Toggle ignoring non-special workspace binds
-      bind=$mod, ESCAPE, exec, notify-send "Game mode enabled!"
+      bind=$mod, ESCAPE, exec, dunstify "Game mode enabled!"
       bind=$mod, ESCAPE, submap, gamemode
       submap = gamemode
 
       # Toggle off
-      bind=$mod, ESCAPE, exec, notify-send "Game mode disabled!"
+      bind=$mod, ESCAPE, exec, dunstify "Game mode disabled!"
       bind=$mod, ESCAPE, submap, reset
 
       # Keep overlay workspace
@@ -276,13 +274,13 @@
 
       if [[ $1 == rc ]]; then
         grim -g "$(slurp -b '#000000b0' -c '#00000000')" - | wl-copy
-        notify-send 'Copied to Clipboard' Screenshot
+        dunstify 'Copied to Clipboard' Screenshot
 
       elif [[ $1 == rf ]]; then
         mkdir -p ~/Pictures/Screenshots
         filename=~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png
         grim -g "$(slurp -b '#000000b0' -c '#00000000')" $filename
-        notify-send 'Screenshot Taken' $filename
+        dunstify 'Screenshot Taken' $filename
 
       elif [[ $1 == ri ]]; then
         grim -g "$(slurp -b '#000000b0' -c '#00000000')" - | swappy -f -
@@ -290,13 +288,13 @@
       elif [[ $1 == sc ]]; then
         filename=~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png
         grim - | wl-copy
-        notify-send 'Copied to Clipboard' Screenshot
+        dunstify 'Copied to Clipboard' Screenshot
 
       elif [[ $1 == sf ]]; then
         mkdir -p ~/Pictures/Screenshots
         filename=~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png
         grim $filename
-        notify-send 'Screenshot Taken' $filename
+        dunstify 'Screenshot Taken' $filename
 
       elif [[ $1 == si ]]; then
         grim - | swappy -f -
@@ -304,7 +302,7 @@
       elif [[ $1 == p ]]; then
         color=$(hyprpicker -a)
         wl-copy $color
-        notify-send 'Copied to Clipboard' $color
+        dunstify 'Copied to Clipboard' $color
       fi
     '';
   };

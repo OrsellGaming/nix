@@ -58,6 +58,7 @@
     ./home-manager/git.nix
     ./home-manager/kitty.nix
     ./home-manager/nh.nix
+    ./home-manager/notification-daemon.nix
     ./home-manager/obs.nix
     ./home-manager/yazi.nix
     ./home-manager/discord/nixcord.nix
