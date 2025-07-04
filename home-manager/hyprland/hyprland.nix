@@ -80,6 +80,7 @@
         "alt, mouse_up, workspace, e+1"
 
         # Hide Special workspaces if active
+        # Taken from https://www.reddit.com/r/hyprland/comments/1b6bf39/comment/ktfscyz/
         "control, 1, exec, hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .specialWorkspace.name' | sed 's/special://' | xargs -I [] hyprctl dispatch togglespecialworkspace []"
         "control, 2, exec, hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .specialWorkspace.name' | sed 's/special://' | xargs -I [] hyprctl dispatch togglespecialworkspace []"
         "control, 3, exec, hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .specialWorkspace.name' | sed 's/special://' | xargs -I [] hyprctl dispatch togglespecialworkspace []"
@@ -132,6 +133,10 @@
         #   "range" = "10";
         #   "color" = "rgb(0, 0, 0)";
         # };
+      };
+
+      animations = {
+        "animation" = "specialWorkspace, 1, 3, default, slidefadevert -50%";
       };
 
       misc = {
