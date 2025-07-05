@@ -37,10 +37,10 @@
         "waybar"
         "systemctl --user start hyprpolkitagent"
         ''mpvpaper --mpv-options "--loop-file=300 --loop-playlist=inf --reset-on-next-file=loop-file" ALL ~/.wallpapers/playlist.m3u''
-        "[workspace special:magic silent] vesktop"
         "[workspace 1 silent] code"
         "[workspace 2 silent] firefox"
         "[workspace 5 silent] kitty"
+        "[workspace special:magic silent] vesktop"
       ];
 
       "monitor" = "HDMI-A-1, 1920x1080@60, 0x0, 1";
@@ -146,7 +146,8 @@
       };
 
       windowrule = [
-        "opacity .95 override .95,class:Code"
+        "opacity .95 override .95, class:Code"
+        "workspace 1, class:Code"
         "bordercolor rgb(6600a1) rgb(ff5100) 0deg rgb(6600a1) rgb(ff5100) 0deg,floating:1"
         "workspace special:magic, class:vesktop"
       ];
