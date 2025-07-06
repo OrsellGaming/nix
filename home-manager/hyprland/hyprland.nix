@@ -1,8 +1,9 @@
 { pkgs, lib, ... }:
-let
-  lockscreenImg = ../../wallpapers/ila.png;
-in
 {
+  imports = [
+    ./hyprlock.nix
+  ];
+
   # WALLPAPERS
   home.file.".wallpapers" = {
     source = ../../wallpapers;
@@ -17,7 +18,7 @@ in
     hyprpolkitagent # Authentication Manager
     rofi # App Launcher
     mpvpaper # Video Wallpaper Manager
-    grim # Screenshot utils
+    grim # Screenshot utils (x3)
     slurp
     swappy
     wl-clipboard
@@ -25,7 +26,7 @@ in
     font-awesome
     lm_sensors # Stats for waybar
     catppuccin-cursors.mochaSapphire
-    jq
+    jq # Used for detecting if a special workspace is active when switching to a numbered workspace
   ];
 
   home.pointerCursor = {
@@ -189,104 +190,6 @@ in
   home.file.".config/waybar" = {
     source =  ./waybar; 
     recursive = true;
-  };
-
-  # Lock screen
-  programs.hyprlock = {
-    enable = true;
-
-    settings = {
-      # for more configuration options, refer https://wiki.hyprland.org/Hypr-Ecosystem/hyprlock
-
-      general = {
-        hide_cursor = false;
-      };
-
-      animations = {
-        enabled = true;
-        bezier = "linear, 1, 1, 0, 0";
-        animation = [
-          "fadeIn = 1, 5, linear"
-          "fadeOut = 1, 5, linear"
-          "inputFieldDots = 1, 2, linear"
-        ];
-      };
-
-      background = {
-        monitor = "";
-        path = "${lockscreenImg}";
-        blur_passes = 1;
-      };
-
-      input-field = [
-        {
-          monitor = "";
-          size = "20%, 5%";
-          outline_thickness = 3;
-          inner_color = "rgba(0, 0, 0, 0.0)"; # no fill
-
-          outer_color = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-          check_color = "rgba(00ff99ee) rgba(ff6633ee) 120deg";
-          fail_color = "rgba(ff6633ee) rgba(ff0066ee) 40deg";
-
-          font_color = "rgb(143, 143, 143)";
-          fade_on_empty = false;
-          rounding = 15;
-
-          font_family = "Monospace";
-          placeholder_text = "Input password...";
-          fail_text = "$PAMFAIL";
-
-          # uncomment to use a letter instead of a dot to indicate the typed password
-          # dots_text_format = *
-          # dots_size = 0.4
-          dots_spacing = 0.3;
-
-          # uncomment to use an input indicator that does not show the password length (similar to swaylock's input indicator)
-          # hide_input = true;
-
-          position = "0, -20";
-          halign = "center";
-          valign = "center";
-        }
-      ];
-
-      # TIME
-      label = [
-        {
-          monitor = "";
-          text = "$TIME12"; # ref. https://wiki.hyprland.org/Hypr-Ecosystem/hyprlock/#variable-substitution
-          font_size = 90;
-          font_family = "Monospace";
-
-          position = "-30, 0";
-          halign = "right";
-          valign = "top";
-        }
-        {
-          # DATE
-          monitor = "";
-          text = ''cmd[update:60000] date +"%Y %m %d, %A"''; # update every 60 seconds
-          font_size = 25;
-          font_family = "Monospace";
-
-          position = "-30, -150";
-          halign = "right";
-          valign = "top";
-        }
-        # {
-        #   monitor = "";
-        #   text = "$LAYOUT[en]";
-        #   font_size = 24;
-        #   onclick = "hyprctl switchxkblayout all next";
-
-        #   position = "250, -20";
-        #   halign = "center";
-        #   valign = "center";
-        # }
-      ];
-    };
-
   };
 
   # Screenshots
