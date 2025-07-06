@@ -1,3 +1,4 @@
+# NIX COMMAND HELPER
 {...}:
 {
   programs.nh = {

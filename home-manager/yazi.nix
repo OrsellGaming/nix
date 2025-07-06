@@ -1,3 +1,4 @@
+# FILE MANAGER
 { ... }:
 {
   programs.yazi = {

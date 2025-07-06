@@ -1,3 +1,4 @@
+# DISPLAY/WINDOW MANAGER
 { pkgs, lib, ... }:
 {
   imports = [
