@@ -5,6 +5,10 @@
     source = ../../wallpapers;
     recursive = true;
   };
+  home.file.".wallpapers/wallpaper-d.sh" = {
+    source = ./wallpaper-d.sh;
+    executable = true;
+  };
 
   home.packages = with pkgs; [
     hyprpolkitagent # Authentication Manager
@@ -36,7 +40,7 @@
       exec-once = [
         "waybar"
         "systemctl --user start hyprpolkitagent"
-        ''mpvpaper --mpv-options "--loop-file=300 --loop-playlist=inf --reset-on-next-file=loop-file" ALL ~/.wallpapers/playlist.m3u''
+        ''~/.wallpapers/wallpaper-d.sh''
         "[workspace 1 silent] code"
         "[workspace 2 silent] firefox"
         "[workspace 5 silent] kitty"
