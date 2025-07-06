@@ -1,4 +1,7 @@
 { pkgs, lib, ... }:
+let
+  lockscreenImg = ../../wallpapers/ila.png;
+in
 {
   # WALLPAPERS
   home.file.".wallpapers" = {
@@ -209,11 +212,11 @@
         ];
       };
 
-      # background = {
-      #   monitor = "";
-      #   path = "${wallpaper-static}";
-      #   blur_passes = 3;
-      # };
+      background = {
+        monitor = "";
+        path = "${lockscreenImg}";
+        blur_passes = 1;
+      };
 
       input-field = [
         {
