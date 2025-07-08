@@ -4,7 +4,6 @@ let
   lockscreenImg = ../../wallpapers/ila.png;
 in
 {
-  # Lock screen
   programs.hyprlock = {
     enable = true;
 
