@@ -4,6 +4,7 @@ while :; do
     mpvpaper --mpv-options "--loop-file=300" ALL ~/.wallpapers/spill-animated.mp4
     mpvpaper --mpv-options "--loop-file=120" ALL ~/.wallpapers/ila-animated.mp4
   else
-    mpvpaper --mpv-options "--loop-file=1000" ALL ~/.wallpapers/overthrower-animated.mp4
+    mpvpaper --mpv-options "--loop-file=250" ALL ~/.wallpapers/overthrower-animated.mp4
+    mpvpaper --mpv-options "--loop-file=600" ALL ~/.wallpapers/team.mp4
   fi
 done
