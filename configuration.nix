@@ -7,12 +7,13 @@
     [
       ./hardware-configuration.nix
       ./system-configuration/bootloader.nix
-      ./system-configuration/greeter/greeter.nix
-      ./system-configuration/sops/sops.nix
+      ./system-configuration/steam.nix
       ./system-configuration/tailscale.nix
       # ./system-configuration/kde.nix
       # ./system-configuration/sddm.nix
       ./system-configuration/virtual-machines.nix
+      ./system-configuration/greeter/greeter.nix
+      ./system-configuration/sops/sops.nix
     ];
 
   networking.hostName = "desktop"; # Define your hostname.
@@ -97,19 +98,6 @@
     enable = true;
     # pinentryPackage = "pinentry-gtk2";
     enableSSHSupport = false;
-  };
-
-  # Install Steam
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game T>
-  };
-  hardware.steam-hardware.enable = true;
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
   };
 
   # VR
