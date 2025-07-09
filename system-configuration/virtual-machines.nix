@@ -22,6 +22,7 @@
     virtualisation = {
       memorySize =  8192;
       cores = 8;
+      diskSize = 20000;
     };
   };
 }
