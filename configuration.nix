@@ -111,11 +111,11 @@
       json = {
         # 1.0x foveation scaling
         scale = 1.0;
-        # 70 Mb/s
-        bitrate = 70000000;
+        # 50 Mb/s
+        bitrate = 50000000;
         encoders = [
           {
-            encoder = "vaapi";
+            encoder = "vulkan";
             codec = "h264";
             # 1.0 x 1.0 scaling
             width = 1.0;
@@ -141,6 +141,7 @@
     protonup-qt
     tailscale
     gnupg
+    wlx-overlay-s
   ];
   # List services that you want to enable:
 
