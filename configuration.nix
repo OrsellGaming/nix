@@ -111,8 +111,8 @@
       json = {
         # 1.0x foveation scaling
         scale = 1.0;
-        # 50 Mb/s
-        bitrate = 50000000;
+        # 70 Mb/s
+        bitrate = 70000000;
         encoders = [
           {
             encoder = "vulkan";
