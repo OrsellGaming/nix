@@ -48,7 +48,7 @@
         ''~/.wallpapers/wallpaper-d.sh''
         "[workspace 1 silent] code"
         "[workspace 2 silent] firefox"
-        "[workspace 5 silent] kitty"
+        "[workspace 5 silent] kitty tmux"
         "[workspace special:magic silent] vesktop"
       ];
 
@@ -61,7 +61,7 @@
         "SUPER, SUPER_L, exec, pkill rofi || rofi -show drun"
 
         # Terminal Shortcut
-        "$mod, q, exec, $terminal"
+        "$mod, q, exec, $terminal tmux"
 
         # Selective Screenshot
         ", Print, exec, ~/.config/hypr/scripts/screenshot rc"

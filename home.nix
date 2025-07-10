@@ -60,6 +60,7 @@
     ./home-manager/nh.nix
     ./home-manager/notification-daemon.nix
     ./home-manager/obs.nix
+    ./home-manager/tmux.nix
     ./home-manager/yazi.nix
     ./home-manager/discord/nixcord.nix
     ./home-manager/fastfetch/fastfetch.nix
