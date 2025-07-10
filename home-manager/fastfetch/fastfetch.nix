@@ -1,17 +1,8 @@
 {...}:
-let
-  nixImg = ./nix.webp;
-in
 {
   programs.fastfetch = {
     enable = true;
     settings = {
-      logo = {
-        type = "auto";
-        source = "${nixImg}";
-        width = 50;
-        height = 25;
-      };
       display = {
         separator = "  ";
         "constants" = [
