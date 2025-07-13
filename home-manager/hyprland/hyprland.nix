@@ -129,7 +129,7 @@
         "col.active_border" = "rgb(27F274) rgb(3BFFFF) 45deg";
         "col.inactive_border" = "rgb(ffff50) rgb(c97d2d) 45deg";
 
-        "border_size" = "5";
+        "border_size" = "4";
         "resize_on_border" = "true";
         "extend_border_grab_area" = "10";
         "hover_icon_on_border" = "true";
