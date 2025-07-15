@@ -45,7 +45,7 @@
       exec-once = [
         # "waybar"
         "systemctl --user start hyprpolkitagent"
-        ''~/.wallpapers/wallpaper-d.sh''
+        "~/.wallpapers/wallpaper-d.sh"
         "[workspace 1 silent] code"
         "[workspace 2 silent] firefox"
         "[workspace 5 silent] kitty tmux"
