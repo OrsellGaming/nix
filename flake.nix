@@ -5,7 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
     hyprland.url = "github:hyprwm/Hyprland";
-    # millennium.url = "git+https://github.com/SteamClientHomebrew/Millennium?ref=next";
+    millennium.url = "git+https://github.com/SteamClientHomebrew/Millennium?ref=next";
     home-manager = {
        url = "github:nix-community/home-manager";
        inputs.nixpkgs.follows = "nixpkgs";
