@@ -17,7 +17,7 @@
     bottles # Wine
     jdk21 # Java
     quickemu # Easy VM management
-    gimp-with-plugins
+    # gimp-with-plugins
     lazygit
     sidequest
     uget
@@ -26,30 +26,31 @@
     pavucontrol # Volume Control
     kdePackages.kdenlive # Video Editor
     bs-manager # Beat Saber Mod Manager
+    alvr
   ];
 
-  # EXTRA VR CONFIG
-  xdg.configFile."openxr/1/active_runtime.json".source = "${pkgs.wivrn}/share/openxr/1/openxr_wivrn.json";
+  # # EXTRA VR CONFIG
+  # xdg.configFile."openxr/1/active_runtime.json".source = "${pkgs.wivrn}/share/openxr/1/openxr_wivrn.json";
 
-  xdg.configFile."openvr/openvrpaths.vrpath".text = ''
-    {
-      "config" :
-      [
-        "${config.xdg.dataHome}/Steam/config"
-      ],
-      "external_drivers" : null,
-      "jsonid" : "vrpathreg",
-      "log" :
-      [
-        "${config.xdg.dataHome}/Steam/logs"
-      ],
-      "runtime" :
-      [
-        "${pkgs.opencomposite}/lib/opencomposite"
-      ],
-      "version" : 1
-    }
-  '';
+  # xdg.configFile."openvr/openvrpaths.vrpath".text = ''
+  #   {
+  #     "config" :
+  #     [
+  #       "${config.xdg.dataHome}/Steam/config"
+  #     ],
+  #     "external_drivers" : null,
+  #     "jsonid" : "vrpathreg",
+  #     "log" :
+  #     [
+  #       "${config.xdg.dataHome}/Steam/logs"
+  #     ],
+  #     "runtime" :
+  #     [
+  #       "${pkgs.opencomposite}/lib/opencomposite"
+  #     ],
+  #     "version" : 1
+  #   }
+  # '';
 
   imports = [
     # ./home-manager/default-applications.nix
@@ -66,6 +67,7 @@
     ./home-manager/fastfetch/fastfetch.nix
     ./home-manager/hyprland/hyprland.nix
     ./home-manager/vscode/vscode.nix
+    ./home-manager/steam/steam.nix
   ];
 
   # packages.someDotnetApplication6 = {
