@@ -1,11 +1,11 @@
 { pkgs, inputs, ... }:
 {
-  # nixpkgs.overlays = [
-  #   inputs.millennium.overlays.default
-  # ];
+  nixpkgs.overlays = [
+    inputs.millennium.overlays.default
+  ];
   programs.steam = {
     enable = true;
-    # package = pkgs.millennium; # Steam Client modding framework
+    package = pkgs.steam-millennium; # Steam Client modding framework
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game T>
@@ -16,3 +16,4 @@
     enable32Bit = true;
   };
 }
+# This is not the only configuration for steam! check home-manager/steam
