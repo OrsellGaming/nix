@@ -10,12 +10,13 @@
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
+    alvr # VR
     lutris
     gale
     qbittorrent
     vpkedit
     bottles # Wine
-    jdk21 # Java
+    jdk21 # J*va
     quickemu # Easy VM management
     # gimp-with-plugins
     lazygit
@@ -26,31 +27,7 @@
     pavucontrol # Volume Control
     kdePackages.kdenlive # Video Editor
     bs-manager # Beat Saber Mod Manager
-    alvr
   ];
-
-  # # EXTRA VR CONFIG
-  # xdg.configFile."openxr/1/active_runtime.json".source = "${pkgs.wivrn}/share/openxr/1/openxr_wivrn.json";
-
-  # xdg.configFile."openvr/openvrpaths.vrpath".text = ''
-  #   {
-  #     "config" :
-  #     [
-  #       "${config.xdg.dataHome}/Steam/config"
-  #     ],
-  #     "external_drivers" : null,
-  #     "jsonid" : "vrpathreg",
-  #     "log" :
-  #     [
-  #       "${config.xdg.dataHome}/Steam/logs"
-  #     ],
-  #     "runtime" :
-  #     [
-  #       "${pkgs.opencomposite}/lib/opencomposite"
-  #     ],
-  #     "version" : 1
-  #   }
-  # '';
 
   imports = [
     # ./home-manager/default-applications.nix
@@ -69,11 +46,6 @@
     ./home-manager/vscode/vscode.nix
     ./home-manager/steam/steam.nix
   ];
-
-  # packages.someDotnetApplication6 = {
-  #   pkgs.buildDotnetModule rec {
-  #     pname = "some_program"; version = "some_version"
-  #   };
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
