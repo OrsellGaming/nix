@@ -16,12 +16,6 @@
       ./system-configuration/sops/sops.nix
     ];
 
-  nixpkgs.overlays = [ # temporary fix for https://github.com/NixOS/nixpkgs/issues/425323
-    (final: prev: {
-      jdk8 = final.openjdk8-bootstrap;
-    })
-  ];
-
   networking.hostName = "desktop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
