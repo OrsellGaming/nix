@@ -18,7 +18,7 @@
     bottles # Wine
     jdk21 # J*va
     quickemu # Easy VM management
-    # gimp-with-plugins
+    gimp
     lazygit
     sidequest
     uget
