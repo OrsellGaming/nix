@@ -75,6 +75,10 @@
         # Overlayed workspace (like steam ingame overlay)
         "$mod, d, togglespecialworkspace, magic"
         "$mod SHIFT, d, movetoworkspace, special:magic"
+        "$mod CONTROL, d, movetoworkspace, 1"
+
+        # Pin window to make it always visible on all workspaces
+        "$mod, p, pin"
 
         # Workspaces
         "control, 1, workspace, 1"
@@ -160,6 +164,7 @@
         "workspace 1, class:Code"
         "bordercolor rgb(6600a1) rgb(ff5100) 0deg rgb(6600a1) rgb(ff5100) 0deg,floating:1"
         "workspace special:magic, class:vesktop"
+        "bordersize 0, pinned:1"
       ];
     };
     extraConfig = ''
