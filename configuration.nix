@@ -66,7 +66,12 @@
     pulse.enable = true;
   };
 
-  nix.settings.auto-optimise-store = true;
+  nix.settings = {
+    auto-optimise-store = true;
+
+    # Flakes
+    experimental-features = [ "nix-command" "flakes" ];
+  };
   nix.gc.automatic = true;
   nix.gc.dates = "daily";
   nix.gc.options = "--delete-older-than 7d";
@@ -81,9 +86,6 @@
     description = "n";
     extraGroups = [ "networkmanager" "wheel" "adbusers" "libvirtd" ];
   };
-
-  # Flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Enable key-signing
   programs.ssh = {
