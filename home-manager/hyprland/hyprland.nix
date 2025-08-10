@@ -46,6 +46,7 @@
         # "waybar"
         "systemctl --user start hyprpolkitagent"
         "~/.wallpapers/wallpaper-d.sh"
+        "quickshell"
         "[workspace 1 silent] code"
         "[workspace 2 silent] firefox"
         "[workspace 5 silent] kitty tmux"

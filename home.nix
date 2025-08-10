@@ -43,6 +43,7 @@
     ./home-manager/discord/nixcord.nix
     ./home-manager/fastfetch/fastfetch.nix
     ./home-manager/hyprland/hyprland.nix
+    ./home-manager/quickshell/quickshell.nix
     ./home-manager/vscode/vscode.nix
     ./home-manager/steam/steam.nix
   ];
