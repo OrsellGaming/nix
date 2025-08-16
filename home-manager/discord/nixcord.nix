@@ -1,5 +1,10 @@
 {pkgs, lib, ...}:
 {
+
+  imports = [
+    ./slasher.nix
+  ];
+
   # vencord theme
   home.file = {
     ".config/vesktop/themes" = {

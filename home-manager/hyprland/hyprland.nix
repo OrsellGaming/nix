@@ -73,6 +73,14 @@
         # OBS Clip Hotkey
         ", F8, pass, class:^(com\.obsproject\.Studio)$"
 
+        # Execution
+        ", code:87, exec, ~/.discord-slasher.sh 0" # Orsell
+        ", code:88, exec, ~/.discord-slasher.sh 1" # Bob
+        ", code:89, exec, ~/.discord-slasher.sh 2" # Deepfried
+        ", code:83, exec, ~/.discord-slasher.sh 0 1"
+        ", code:84, exec, ~/.discord-slasher.sh 1 1"
+        ", code:85, exec, ~/.discord-slasher.sh 2 1"
+
         # Overlayed workspace (like steam ingame overlay)
         "$mod, d, togglespecialworkspace, magic"
         "$mod SHIFT, d, movetoworkspace, special:magic"
@@ -166,6 +174,12 @@
         "bordercolor rgb(6600a1) rgb(ff5100) 0deg rgb(6600a1) rgb(ff5100) 0deg,floating:1"
         "workspace special:magic, class:vesktop"
         "bordersize 0, pinned:1"
+        "float, initialTitle:Picture-in-Picture"
+        "pin, initialTitle:Picture-in-Picture"
+        "size 552 310, initialTitle:Picture-in-Picture"
+        "float, initialTitle:Discord Popout"
+        "pin, initialTitle:Discord Popout"
+        "size 552 310, initialTitle:Discord Popout"
       ];
     };
     extraConfig = ''

@@ -2,6 +2,7 @@
 , pkgs
 , inputs
 , lib
+, sops-nix
 , ... }:
 
 {
@@ -47,6 +48,17 @@
     ./home-manager/vscode/vscode.nix
     ./home-manager/steam/steam.nix
   ];
+
+  # Secret Management
+  sops = {
+    defaultSopsFile = ./system-configuration/sops/secrets/secrets.yaml;
+    defaultSopsFormat = "yaml";
+    defaultSymlinkPath = "/run/user/1000/secrets";
+    defaultSecretsMountPoint = "/run/user/1000/secrets.d";
+    age.keyFile = "/home/n/.config/sops/age/keys.txt";
+    secrets.discord-token = { path = "${config.sops.defaultSymlinkPath}/discord-token"; };
+  };
+
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage

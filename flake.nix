@@ -24,7 +24,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, flake-utils, home-manager, ... }@inputs: {
+  outputs = { self, nixpkgs, flake-utils, home-manager, sops-nix, ... }@inputs: {
     nixosConfigurations = {
       desktop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -32,6 +32,7 @@
         modules = [
           ./configuration.nix
           home-manager.nixosModules.home-manager
+          sops-nix.nixosModules.sops
           {
             home-manager.backupFileExtension = "backup";
             home-manager.useGlobalPkgs = true;
@@ -39,6 +40,7 @@
             home-manager.users.n = import ./home.nix;
             home-manager.sharedModules = [
               inputs.nixcord.homeModules.nixcord
+              inputs.sops-nix.homeManagerModule
             ];
             home-manager.extraSpecialArgs = { inherit inputs; };
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
