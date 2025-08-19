@@ -17,7 +17,6 @@
 
   home.packages = with pkgs; [
     hyprpolkitagent # Authentication Manager
-    rofi # App Launcher
     mpvpaper # Video Wallpaper Manager
     grim # Screenshot utils (x3)
     slurp
@@ -27,6 +26,11 @@
     catppuccin-cursors.mochaSapphire
     jq # Used for detecting if a special workspace is active when switching to a numbered workspace
   ];
+
+  programs.rofi = {
+    enable = true;
+    theme = "material";
+  };
 
   home.pointerCursor = {
     gtk.enable = true;
@@ -43,7 +47,6 @@
       exec-once = [
         "systemctl --user start hyprpolkitagent"
         "~/.wallpapers/wallpaper-d.sh"
-        "quickshell"
         "[workspace 1 silent] code"
         "[workspace 2 silent] firefox"
         "[workspace 5 silent] kitty tmux"
