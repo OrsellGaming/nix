@@ -23,9 +23,7 @@
     slurp
     swappy
     wl-clipboard
-    # nerd-fonts.caskaydia-cove
     font-awesome
-    # lm_sensors # Stats for waybar
     catppuccin-cursors.mochaSapphire
     jq # Used for detecting if a special workspace is active when switching to a numbered workspace
   ];
@@ -43,7 +41,6 @@
     portalPackage = null;
     settings = {
       exec-once = [
-        # "waybar"
         "systemctl --user start hyprpolkitagent"
         "~/.wallpapers/wallpaper-d.sh"
         "quickshell"
@@ -205,14 +202,6 @@
       submap = reset
     '';
   };
-
-  # Waybar configuration
-  # programs.waybar.enable = true;
-  # fonts.fontconfig.enable = true;
-  # home.file.".config/waybar" = {
-  #   source =  ./waybar;
-  #   recursive = true;
-  # };
 
   # Screenshots
   home.file.".config/hypr/scripts/screenshot" = {
