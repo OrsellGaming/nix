@@ -10,6 +10,7 @@
         categories = [ "Application" ];
         mimeType = [ "text/html" "text/xml" ];
       };
+
       vlc = {
         name = "VLC";
         genericName = "VLC Media Player";
@@ -17,6 +18,11 @@
         terminal = false;
         categories = [ "Application" ];
         mimeType = [ "video/*" ];
+      };
+
+      nemo = {
+          name = "Nemo";
+          exec = "${pkgs.nemo-with-extensions}/bin/nemo";
       };
 
       # kitty = {
@@ -38,6 +44,8 @@
         "text/plain" = ["code.desktop"];
         "image/*" = ["gimp.desktop"];
         "video/*" = ["vlc.desktop"];
+        "inode/directory" = [ "nemo.desktop" ];
+        "application/x-gnome-saved-search" = [ "nemo.desktop" ];
       };
     };
   };
