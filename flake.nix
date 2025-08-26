@@ -5,7 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
     hyprland.url = "github:hyprwm/Hyprland";
-    millennium.url = "git+https://github.com/SteamClientHomebrew/Millennium?ref=next";
+    #millennium.url = "git+https://github.com/SteamClientHomebrew/Millennium";
     home-manager = {
        url = "github:nix-community/home-manager";
        inputs.nixpkgs.follows = "nixpkgs";
@@ -26,7 +26,7 @@
 
   outputs = { self, nixpkgs, flake-utils, home-manager, sops-nix, ... }@inputs: {
     nixosConfigurations = {
-      desktop = nixpkgs.lib.nixosSystem {
+      lambda-core = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
@@ -37,7 +37,7 @@
             home-manager.backupFileExtension = "backup";
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.n = import ./home.nix;
+            home-manager.users.orsell = import ./home.nix;
             home-manager.sharedModules = [
               inputs.nixcord.homeModules.nixcord
               inputs.sops-nix.homeManagerModule

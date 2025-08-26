@@ -53,13 +53,16 @@
         "[workspace special:magic silent] vesktop"
       ];
 
-      "monitor" = "HDMI-A-1, 1920x1080@60, 0x0, 1";
+      "monitor" = "eDP-1, 2560x1600@240, 0x0, 1";
       "$terminal" = "kitty";
       "$mod" = "alt";
 
       bind = [
         # Application menu
         "SUPER, SUPER_L, exec, pkill rofi || rofi -show drun"
+
+        # Lock computer
+        "SUPER, l, exec, hyprlock"
 
         # Terminal Shortcut
         "$mod, q, exec, $terminal tmux"

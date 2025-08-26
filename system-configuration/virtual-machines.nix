@@ -15,7 +15,7 @@
   programs.virt-manager.enable = true;
   # virtualisation.virtualbox.host.enable = true;
   # virtualisation.virtualbox.host.enableExtensionPack = true;
-  # users.extraGroups.vboxusers.members = [ "n" ];
+  # users.extraGroups.vboxusers.members = [ "orsell" ];
 
   virtualisation.vmVariant = {
   # following configuration is added only when building VM with build-vm

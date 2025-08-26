@@ -2,7 +2,7 @@
 {
 
   imports = [
-    ./slasher.nix
+    #./slasher.nix
   ];
 
   # vencord theme

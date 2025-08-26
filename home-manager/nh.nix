@@ -3,6 +3,6 @@
 {
   programs.nh = {
     enable = true;
-    flake = "/home/n/nixos";
+    flake = "/home/orsell/nixos";
   };
 }

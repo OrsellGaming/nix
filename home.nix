@@ -6,12 +6,13 @@
 , ... }:
 
 {
-  home.username = "n";
-  home.homeDirectory = "/home/n";
+  home.username = "orsell";
+  home.homeDirectory = "/home/orsell";
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     alvr # VR
+    sidequest
     lutris
     gale
     qbittorrent
@@ -21,7 +22,6 @@
     quickemu # Easy VM management
     gimp
     lazygit
-    sidequest
     uget
     mpv # Media Player
     modrinth-app
@@ -31,33 +31,33 @@
   ];
 
   imports = [
-    # ./home-manager/default-applications.nix
+    ./home-manager/discord/nixcord.nix
+    ./home-manager/fastfetch/fastfetch.nix
+    ./home-manager/hyprland/hyprland.nix
+    ./home-manager/default-applications.nix
     ./home-manager/bash.nix
     ./home-manager/firefox.nix
     ./home-manager/git.nix
     ./home-manager/kitty.nix
     ./home-manager/nemo.nix
-    ./home-manager/nh.nix
     ./home-manager/notification-daemon.nix
+    ./home-manager/nh.nix
     ./home-manager/obs.nix
     ./home-manager/tmux.nix
-    ./home-manager/discord/nixcord.nix
-    ./home-manager/fastfetch/fastfetch.nix
-    ./home-manager/hyprland/hyprland.nix
     # ./home-manager/quickshell/quickshell.nix
     ./home-manager/vscode/vscode.nix
-    ./home-manager/steam/steam.nix
+    # ./home-manager/steam/steam.nix
   ];
 
   # Secret Management
-  sops = {
-    defaultSopsFile = ./system-configuration/sops/secrets/secrets.yaml;
-    defaultSopsFormat = "yaml";
-    defaultSymlinkPath = "/run/user/1000/secrets";
-    defaultSecretsMountPoint = "/run/user/1000/secrets.d";
-    age.keyFile = "/home/n/.config/sops/age/keys.txt";
-    secrets.discord-token = { path = "${config.sops.defaultSymlinkPath}/discord-token"; };
-  };
+  #sops = {
+  #  defaultSopsFile = ./system-configuration/sops/secrets/secrets.yaml;
+  #  defaultSopsFormat = "yaml";
+  #  defaultSymlinkPath = "/run/user/1000/secrets";
+  #  defaultSecretsMountPoint = "/run/user/1000/secrets.d";
+  #  #age.keyFile = "/home/orsell/.config/sops/age/keys.txt";
+  #  secrets.discord-token = { path = "${config.sops.defaultSymlinkPath}/discord-token"; };
+  #};
 
 
   # This value determines the home Manager release that your

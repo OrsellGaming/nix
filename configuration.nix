@@ -8,15 +8,15 @@
       ./hardware-configuration.nix
       ./system-configuration/bootloader.nix
       ./system-configuration/steam.nix
-      ./system-configuration/tailscale.nix
-      # ./system-configuration/kde.nix
+      # ./system-configuration/tailscale.nix
+      ./system-configuration/kde.nix
       # ./system-configuration/sddm.nix
       ./system-configuration/virtual-machines.nix
       ./system-configuration/greeter/greeter.nix
-      ./system-configuration/sops/sops.nix
+      # ./system-configuration/sops/sops.nix
     ];
 
-  networking.hostName = "desktop"; # Define your hostname.
+  networking.hostName = "lambda-core"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -26,13 +26,13 @@
   # Enable networking
   networking.networkmanager.enable = true;
   networking.enableIPv6  = false;
-  networking.nameservers = [ "192.168.1.56" ];
+  networking.nameservers = [ "1.1.1.1" ];
 
   programs.hyprland.enable = true;
 
   security.polkit.enable = true;
   # Set your time zone.
-  time.timeZone = "America/New_York";
+  time.timeZone = "America/Los_Angeles";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -80,10 +80,9 @@
   nixpkgs.config.allowUnfree = true;
 
   # Define a user account.
-  users.users.n = {
+  users.users.orsell = {
     isNormalUser = true;
-    initialPassword = "n"; # CHANGE THIS AFTER INSTALL!!
-    description = "n";
+    description = "Some nerds account";
     extraGroups = [ "networkmanager" "wheel" "adbusers" "libvirtd" ];
   };
 
@@ -130,23 +129,7 @@
   #   };
   # };
 
-  boot.kernelPatches = [
-    {
-      name = "amdgpu-ignore-ctx-privileges";
-      patch = pkgs.fetchpatch {
-        name = "cap_sys_nice_begone.patch";
-        url = "https://github.com/Frogging-Family/community-patches/raw/master/linux61-tkg/cap_sys_nice_begone.mypatch";
-        hash = "sha256-Y3a0+x2xvHsfLax/uwycdJf3xLxvVfkfDVqjkxNaYEo=";
-      };
-    }
-  ];
-
   programs.adb.enable = true;
-
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-    skia
-  ];
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
@@ -154,19 +137,18 @@
     protonup-qt
     tailscale
     gnupg
-    wlx-overlay-s
+    btop
   ];
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-# ...
+  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  networking.firewall.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

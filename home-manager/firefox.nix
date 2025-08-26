@@ -42,7 +42,7 @@
       };
     };
 
-    profiles.n = {
+    profiles.orsell = {
       search = {
         force = true;
         default = "Brave";
