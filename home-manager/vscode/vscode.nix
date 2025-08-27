@@ -3,7 +3,6 @@
   programs.vscode = {
     enable = true;
     profiles.default.extensions = with pkgs.vscode-extensions; [
-      dracula-theme.theme-dracula
       yzhang.markdown-all-in-one
       bbenoist.nix
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
@@ -41,7 +40,13 @@
 			name = "catppuccin-vsc";
 			publisher = "Catppuccin";
 			version = "3.17.0";
-			sha256 = "sha256-udDbsXAEsJUt3WUU8aBvCi8Pu+8gu+xQkimlmvRZ9pg=";
+			sha256 = "udDbsXAEsJUt3WUU8aBvCi8Pu+8gu+xQkimlmvRZ9pg=";
+		}
+		{
+			name = "catppuccin-vsc-icons";
+			publisher = "Catppuccin";
+			version = "1.24.0";
+			sha256 = "2M7N4Ccw9FAaMmG36hGHi6i0i1qR+uPCSgXELAA03Xk=";
 		}
     ];
 
@@ -49,6 +54,7 @@
       "files.autoSave" = "afterDelay";
 
 	  "workbench.iconTheme" = "catppuccin-mocha";
+	  "workbench.colorTheme" = "Catppuccin Mocha";
 	  
 	  "editor.selectionClipboard" = false;
 	  
