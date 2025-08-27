@@ -55,6 +55,7 @@
 
 	  "workbench.iconTheme" = "catppuccin-mocha";
 	  "workbench.colorTheme" = "Catppuccin Mocha";
+	  "workbench.secondarySideBar.defaultVisibility" = "hidden";
 	  
 	  "editor.selectionClipboard" = false;
 	  
@@ -65,6 +66,9 @@
 	  
 	  "VScriptDebugger.displayRootTable" = true;
 	  
+	  "vsicons.dontShowNewVersionMessage" = true;
+
+	  "RainbowBrackets.depreciation-notice" = false;
     };
   };
 
