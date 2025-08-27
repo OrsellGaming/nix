@@ -6,14 +6,15 @@
   imports =
     [
       ./hardware-configuration.nix
-      ./system-configuration/bootloader.nix
-      ./system-configuration/steam.nix
-      # ./system-configuration/tailscale.nix
-      ./system-configuration/kde.nix
-      # ./system-configuration/sddm.nix
-      ./system-configuration/virtual-machines.nix
       ./system-configuration/greeter/greeter.nix
       # ./system-configuration/sops/sops.nix
+      ./system-configuration/bootloader.nix
+      ./system-configuration/cpu-power.nix
+      ./system-configuration/kde.nix
+      # ./system-configuration/sddm.nix
+      ./system-configuration/steam.nix
+      # ./system-configuration/tailscale.nix
+      ./system-configuration/virtual-machines.nix
     ];
 
   networking.hostName = "lambda-core"; # Define your hostname.
@@ -82,7 +83,7 @@
   # Define a user account.
   users.users.orsell = {
     isNormalUser = true;
-    description = "Some nerds account";
+    description = "Some Nerd's Account";
     extraGroups = [ "networkmanager" "wheel" "adbusers" "libvirtd" ];
   };
 
