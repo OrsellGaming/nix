@@ -28,6 +28,8 @@
     pavucontrol # Volume Control
     kdePackages.kdenlive # Video Editor
     bs-manager # Beat Saber Mod Manager
+    # Fonts
+    nerd-fonts.jetbrains-mono
   ];
 
   imports = [
@@ -37,17 +39,15 @@
     ./home-manager/hyprland/hyprland.nix
     ./home-manager/hyprland/waybar.nix
     ./home-manager/notification-daemon.nix
-    # ./home-manager/quickshell/quickshell.nix
+    ./home-manager/quickshell/quickshell.nix
     ./home-manager/steam/steam.nix
+    ./home-manager/term-shell/term-shell.nix
     ./home-manager/vscode/vscode.nix
-    ./home-manager/bash.nix
     ./home-manager/firefox.nix
     ./home-manager/git.nix
-    ./home-manager/kitty.nix
     ./home-manager/nemo.nix
     ./home-manager/nh.nix
     ./home-manager/obs.nix
-    ./home-manager/tmux.nix
   ];
 
   # Secret Management
@@ -70,8 +70,6 @@
   # the home Manager release notes for a list of state version
   # changes in each release.
   home.stateVersion = "24.11";
-
-
 
   # Let home Manager install and manage itself.
   programs.home-manager.enable = true;

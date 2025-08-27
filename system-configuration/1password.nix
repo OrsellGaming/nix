@@ -1,3 +1,4 @@
+# 1Password Configuration
 { pkgs, ... }:
 {
     programs._1password.enable = true;

@@ -6,7 +6,7 @@
     userEmail = "34631691+OrsellGaming@users.noreply.github.com";
     lfs.enable = true;
     extraConfig = {
-      # Sign all commits using ssh key
+      # Sign all commits using a SSH key from 1Password
       commit.gpgsign = true;
       gpg.format = "ssh";
       "gpg \"ssh\"".program = "${lib.getExe' pkgs._1password-gui "op-ssh-sign"}";
