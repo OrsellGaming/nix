@@ -31,22 +31,23 @@
   ];
 
   imports = [
+    ./home-manager/default-applications.nix
     ./home-manager/discord/nixcord.nix
     ./home-manager/fastfetch/fastfetch.nix
     ./home-manager/hyprland/hyprland.nix
-    ./home-manager/default-applications.nix
+    ./home-manager/hyprland/waybar.nix
+    ./home-manager/notification-daemon.nix
+    # ./home-manager/quickshell/quickshell.nix
+    ./home-manager/steam/steam.nix
+    ./home-manager/vscode/vscode.nix
     ./home-manager/bash.nix
     ./home-manager/firefox.nix
     ./home-manager/git.nix
     ./home-manager/kitty.nix
     ./home-manager/nemo.nix
-    ./home-manager/notification-daemon.nix
     ./home-manager/nh.nix
     ./home-manager/obs.nix
     ./home-manager/tmux.nix
-    # ./home-manager/quickshell/quickshell.nix
-    ./home-manager/vscode/vscode.nix
-    # ./home-manager/steam/steam.nix
   ];
 
   # Secret Management
