@@ -6,13 +6,9 @@
   ];
 
   # WALLPAPERS
-  home.file.".wallpapers" = {
-    source = ../../wallpapers;
-    recursive = true;
-  };
-  home.file.".wallpapers/wallpaper-d.sh" = {
-    source = ./wallpaper-d.sh;
-    executable = true;
+  home.file = {
+    ".wallpapers" = { source = ../../wallpapers; recursive = true; };
+    ".wallpapers/wallpaper-d.sh" = { source = ./wallpaper-d.sh; executable = true; };
   };
 
   home.packages = with pkgs; [
@@ -46,10 +42,12 @@
     settings = {
       exec-once = [
         "systemctl --user start hyprpolkitagent"
-        "~/.wallpapers/wallpaper-d.sh"
-        "[workspace 1 silent] code"
-        "[workspace 2 silent] firefox"
-        "[workspace 5 silent] kitty tmux"
+        "rog-control-center" # ASUS system control, supergfx and asusctl
+        "1password --silent" # Startup 1Password in the background
+        "~/.wallpapers/wallpaper-d.sh" # Wallpapers
+        "[workspace 1 silent] kitty tmux"
+        # "[workspace 1 silent] code"
+        # "[workspace 2 silent] firefox"
         "[workspace 6 silent] kitty btop"
         "[workspace special:magic silent] vesktop"
       ];
@@ -71,33 +69,52 @@
         # Selective Screenshot
         "SUPER_SHIFT, s, exec, ~/.config/hypr/scripts/screenshot rc"
 
-        # Close Window
-        "alt, w, killactive"
-
         # OBS Clip Hotkey
         ", F8, pass, class:^(com\.obsproject\.Studio)$"
 
+        # ", code:156, 
+
+        # Open 1Password quick access menu.
+        "control SHIFT, SPACE, exec, 1password --quick-access"
+
+        # Close Window
+        "$mod, w, killactive"
+
+        # Pin window to make it always visible on all workspaces
+        "$mod, p, pin"
+
+        # Floating windows
+        "alt, f, togglefloating"
+
         # Execution
-        ", code:87, exec, ~/.discord-slasher.sh 0" # Orsell
-        ", code:88, exec, ~/.discord-slasher.sh 1" # Bob
-        ", code:89, exec, ~/.discord-slasher.sh 2" # Deepfried
-        ", code:83, exec, ~/.discord-slasher.sh 0 1"
-        ", code:84, exec, ~/.discord-slasher.sh 1 1"
-        ", code:85, exec, ~/.discord-slasher.sh 2 1"
+        # ", code:87, exec, ~/.discord-slasher.sh 0" # Orsell
+        # ", code:88, exec, ~/.discord-slasher.sh 1" # Bob
+        # ", code:89, exec, ~/.discord-slasher.sh 2" # Deepfried
+        # ", code:83, exec, ~/.discord-slasher.sh 0 1"
+        # ", code:84, exec, ~/.discord-slasher.sh 1 1"
+        # ", code:85, exec, ~/.discord-slasher.sh 2 1"
+        
+        # Move application between workspaces
+        "control SHIFT, 1, movetoworkspace, 1"
+        "control SHIFT, 2, movetoworkspace, 2"
+        "control SHIFT, 3, movetoworkspace, 3"
+        "control SHIFT, 4, movetoworkspace, 4"
+        "control SHIFT, 9, movetoworkspace, 9" 
+        "control SHIFT, 5, movetoworkspace, 5"
+        "control SHIFT, 6, movetoworkspace, 6"
+        "control SHIFT, 7, movetoworkspace, 7"
+        "control SHIFT, 8, movetoworkspace, 8"
 
         # Overlayed workspace (like steam ingame overlay)
         "$mod, d, togglespecialworkspace, magic"
         "$mod SHIFT, d, movetoworkspace, special:magic"
         "$mod CONTROL, d, movetoworkspace, 1"
 
-        # Pin window to make it always visible on all workspaces
-        "$mod, p, pin"
 
         # Workspaces
         "control, 1, workspace, 1"
         "control, 2, workspace, 2"
         "control, 3, workspace, 3"
-        #"control, 3, workspace, special:magic"
         "control, 4, workspace, 4"
         "control, 5, workspace, 5"
         "control, 6, workspace, 6"
@@ -121,8 +138,6 @@
         "alt, mouse_down, exec, hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .specialWorkspace.name' | sed 's/special://' | xargs -I [] hyprctl dispatch togglespecialworkspace []"
         "alt, mouse_up, exec, hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .specialWorkspace.name' | sed 's/special://' | xargs -I [] hyprctl dispatch togglespecialworkspace []"
 
-        # Floating windows
-        "alt, f, togglefloating"
       ];
 
       bindm = [
