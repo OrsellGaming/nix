@@ -11,7 +11,7 @@
       ./system-configuration/1password.nix
       ./system-configuration/bootloader.nix
       ./system-configuration/cpu-power.nix
-      ./system-configuration/kde.nix
+      # ./system-configuration/kde.nix
       # ./system-configuration/sddm.nix
       ./system-configuration/steam.nix
       # ./system-configuration/tailscale.nix
@@ -31,8 +31,8 @@
   networking.nameservers = [ "1.1.1.1" ];
 
   programs.hyprland.enable = true;
-
   security.polkit.enable = true;
+
   # Set your time zone.
   time.timeZone = "America/Los_Angeles";
 
@@ -68,6 +68,10 @@
     pulse.enable = true;
   };
 
+  # Trackpad Natural Scrolling
+  services.libinput.touchpad.naturalScrolling = true;
+
+
   nix.settings = {
     auto-optimise-store = true;
 
@@ -85,7 +89,7 @@
   users.users.orsell = {
     isNormalUser = true;
     description = "Some Nerd's Account";
-    extraGroups = [ "networkmanager" "wheel" "adbusers" "libvirtd" ];
+    extraGroups = [ "networkmanager" "wheel" "adbusers" "libvirtd" "users" ];
   };
 
   services.pcscd.enable = true;

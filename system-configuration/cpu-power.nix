@@ -1,5 +1,5 @@
 # Laptop CPU and Power Management
-{ pkgs, lib, ... }:
+{ ... }:
 {
     # Prevent overheating with Intel CPUs
     services.thermald.enable = true;
@@ -7,7 +7,7 @@
     # Laptop power and battery settings
     services.power-profiles-daemon.enable = false;
     services.tlp = {
-        enable = true;
+        enable = false;
         settings = {
             CPU_SCALING_GOVERNOR_ON_AC = "performance";
             CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
@@ -24,5 +24,20 @@
             START_CHARGE_THRESH_BAT0 = 50; # 50 and below it starts to charge
             STOP_CHARGE_THRESH_BAT0 = 80; # 80 and above it stops charging
         };
+    };
+
+    # ASUS system packages
+    services.supergfxd = {
+        enable = true;
+        settings = {
+            mode = "Hybrid";
+            vfio_enable = true;
+            vfio_save = true;
+        };
+    };
+    
+    services.asusd = {
+      enable = true;
+      enableUserService = true;
     };
 }
