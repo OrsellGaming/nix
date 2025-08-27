@@ -88,14 +88,6 @@
     extraGroups = [ "networkmanager" "wheel" "adbusers" "libvirtd" ];
   };
 
-  # Enable key-signing
-  programs.ssh = {
-    startAgent = true;
-    extraConfig = ''
-    Host github.com
-      IdentityFile ~/.ssh/github
-    '';
-  };
   services.pcscd.enable = true;
   programs.gnupg.agent = {
     enable = true;
