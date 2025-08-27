@@ -1,7 +1,8 @@
-{pkgs, lib, ...}:
+{pkgs, ...}:
 {
   programs.vscode = {
     enable = true;
+	package = pkgs.vscodium;
     profiles.default.extensions = with pkgs.vscode-extensions; [
       yzhang.markdown-all-in-one
       bbenoist.nix
@@ -51,24 +52,27 @@
     ];
 
     profiles.default.userSettings = {
-      "files.autoSave" = "afterDelay";
+	  	"editor.selectionClipboard" = false;
+	  	"editor.fontFamily" = "JetBrainsMono Nerd Font";
+      	"files.autoSave" = "afterDelay";
+	  
+	  	"git.autofetch" = true;
+	  	"git.openRepositoryInParentFolders" = "always";
+	  
+	  	"merge-conflict.autoNavigateNextConflict.enabled" = true;
+	  
+	  	"RainbowBrackets.depreciation-notice" = false;
+	  
+	  	"terminal.integrated.defaultProfile.linux" = "zsh";
+		"terminal.integrated.fontFamily" = "JetBrainsMono Nerd Font"; 
 
-	  "workbench.iconTheme" = "catppuccin-mocha";
-	  "workbench.colorTheme" = "Catppuccin Mocha";
-	  "workbench.secondarySideBar.defaultVisibility" = "hidden";
+	  	"VScriptDebugger.displayRootTable" = true;
 	  
-	  "editor.selectionClipboard" = false;
+	  	"vsicons.dontShowNewVersionMessage" = true;
 	  
-	  "merge-conflict.autoNavigateNextConflict.enabled" = true;
-	  
-	  "git.autofetch" = true;
-	  "git.openRepositoryInParentFolders" = "always";
-	  
-	  "VScriptDebugger.displayRootTable" = true;
-	  
-	  "vsicons.dontShowNewVersionMessage" = true;
-
-	  "RainbowBrackets.depreciation-notice" = false;
+	  	"workbench.iconTheme" = "catppuccin-mocha";
+	  	"workbench.colorTheme" = "Catppuccin Mocha";
+	  	"workbench.secondarySideBar.defaultVisibility" = "hidden";
     };
   };
 
