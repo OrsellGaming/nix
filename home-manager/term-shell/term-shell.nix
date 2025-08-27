@@ -33,21 +33,6 @@
         enableCompletion = true;
         autosuggestion.enable = true;
         syntaxHighlighting.enable = true;
-        # loginExtra = "fastfetch";
-        # promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-
-        # shellInit = ''
-        #     # Disable zsh's newuser startup script that prompts you to create
-        #     # a ~/.z* file if missing
-        #     zsh-newuser-install() { :; }
-        # '';
-
-        # initContent = let
-        #     zshConfigEarlyInit = lib.mkOrder 500 "zsh-newuser-install() { :; }";
-        #     zshConfig = lib.mkOrder 1000 "do something";
-        #     zshFastfetch = lib.mkOrder 1500 "fastfetch";
-        # in
-        #     lib.mkMerge [ zshConfigEarlyInit zshConfig ];
 
         initContent = lib.mkOrder 500 ''
             source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme

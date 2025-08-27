@@ -1,3 +1,4 @@
+# Fastfetch terminal startup prompt
 {...}:
 {
   programs.fastfetch = {

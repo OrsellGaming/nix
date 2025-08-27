@@ -35,7 +35,6 @@
   imports = [
     ./home-manager/default-applications.nix
     ./home-manager/discord/nixcord.nix
-    ./home-manager/fastfetch/fastfetch.nix
     ./home-manager/hyprland/hyprland.nix
     ./home-manager/hyprland/waybar.nix
     ./home-manager/notification-daemon.nix
