@@ -50,6 +50,7 @@
         "[workspace 1 silent] code"
         "[workspace 2 silent] firefox"
         "[workspace 5 silent] kitty tmux"
+        "[workspace 6 silent] kitty btop"
         "[workspace special:magic silent] vesktop"
       ];
 
@@ -68,7 +69,7 @@
         "$mod, q, exec, $terminal tmux"
 
         # Selective Screenshot
-        ", Print, exec, ~/.config/hypr/scripts/screenshot rc"
+        "SUPER_SHIFT, s, exec, ~/.config/hypr/scripts/screenshot rc"
 
         # Close Window
         "alt, w, killactive"
@@ -96,7 +97,7 @@
         "control, 1, workspace, 1"
         "control, 2, workspace, 2"
         "control, 3, workspace, 3"
-        "control, 3, workspace, special:magic"
+        #"control, 3, workspace, special:magic"
         "control, 4, workspace, 4"
         "control, 5, workspace, 5"
         "control, 6, workspace, 6"
@@ -202,7 +203,7 @@
       bind=, F8, pass, class:^(com\.obsproject\.Studio)$
 
       # Full Screenshot
-      bind=, Print, exec, ~/.config/hypr/scripts/screenshot sc
+      bind=SUPER_SHIFT, s, exec, ~/.config/hypr/scripts/screenshot sc
 
       # End of special bind set
       submap = reset
