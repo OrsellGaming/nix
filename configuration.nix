@@ -8,6 +8,7 @@
       ./hardware-configuration.nix
       ./system-configuration/greeter/greeter.nix
       # ./system-configuration/sops/sops.nix
+      ./system-configuration/1password.nix
       ./system-configuration/bootloader.nix
       ./system-configuration/cpu-power.nix
       ./system-configuration/kde.nix
