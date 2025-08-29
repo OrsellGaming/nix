@@ -110,7 +110,6 @@
         "$mod SHIFT, d, movetoworkspace, special:magic"
         "$mod CONTROL, d, movetoworkspace, 1"
 
-
         # Workspaces
         "control, 1, workspace, 1"
         "control, 2, workspace, 2"

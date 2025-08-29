@@ -1,8 +1,5 @@
 # LOCK SCREEN
 { ... }:
-let
-  lockscreenImg = ../../wallpapers/ila.png;
-in
 {
   programs.hyprlock = {
     enable = true;
@@ -26,7 +23,7 @@ in
 
       background = {
         monitor = "";
-        path = "${lockscreenImg}";
+        path = "../../wallpapers/fox.png;";
         blur_passes = 1;
       };
 
@@ -45,9 +42,9 @@ in
           fade_on_empty = false;
           rounding = 15;
 
-          font_family = "Monospace";
+          font_family = "JetBrainsMono Nerd Font";
           placeholder_text = "Input password...";
-          fail_text = "$PAMFAIL";
+          fail_text = "Wrong passcode bozo!";
 
           # uncomment to use a letter instead of a dot to indicate the typed password
           # dots_text_format = *
@@ -69,7 +66,7 @@ in
           monitor = "";
           text = "$TIME12"; # ref. https://wiki.hyprland.org/Hypr-Ecosystem/hyprlock/#variable-substitution
           font_size = 90;
-          font_family = "Monospace";
+          font_family = "JetBrainsMono Nerd Font";
 
           position = "-30, 0";
           halign = "right";
@@ -80,7 +77,7 @@ in
           monitor = "";
           text = ''cmd[update:60000] date +"%Y %m %d, %A"''; # update every 60 seconds
           font_size = 25;
-          font_family = "Monospace";
+          font_family = "JetBrainsMono Nerd Font";
 
           position = "-30, -150";
           halign = "right";
