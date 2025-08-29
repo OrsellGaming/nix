@@ -11,7 +11,7 @@
 /*restyle tags*/
 [class*=botTag_]:not([class^=nitroBadge]),
 [id^=message-username-]:has([class^=newMemberBadge_])::after
- { color: rgb(255, 94, 0);
+ { color: rgb(255, 255, 255);
    font: bold .8em var(--font-primary);
    margin-left: 1ch;
    padding: .15em 1ch;
@@ -23,4 +23,4 @@
 /*create tag in place of newleaf*/
 [id^=message-username-]:has([class^=newMemberBadge_])::after
  { content: "NEW";
-   background: oklch(90.12 0.157 188.22); }
+   background: oklch(0.61 0.18 148.13); }
