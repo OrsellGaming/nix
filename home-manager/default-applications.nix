@@ -5,7 +5,7 @@
       code = {
         name = "Visual Studio Code";
         genericName = "Code Editor";
-        exec = "code %U";
+        exec = "codium %U";
         terminal = false;
         categories = [ "Application" ];
         mimeType = [ "text/html" "text/xml" ];
@@ -14,7 +14,7 @@
       vlc = {
         name = "VLC";
         genericName = "VLC Media Player";
-        exec = "vlc %U";
+        exec = "mpv %U";
         terminal = false;
         categories = [ "Application" ];
         mimeType = [ "video/*" ];
