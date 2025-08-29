@@ -19,16 +19,17 @@
     ];
 
   networking.hostName = "lambda-core"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
-  networking.networkmanager.enable = true;
+  #networking.networkmanager.enable = true;
   networking.enableIPv6  = false;
   networking.nameservers = [ "1.1.1.1" ];
+  #networking.wireless.enable  = true;
+  networking.wireless.iwd.enable = true;
 
   programs.hyprland.enable = true;
   security.polkit.enable = true;
@@ -51,9 +52,6 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
   # Enable Bluetooth
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
@@ -67,10 +65,6 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
-
-  # Trackpad Natural Scrolling
-  services.libinput.touchpad.naturalScrolling = true;
-
 
   nix.settings = {
     auto-optimise-store = true;
@@ -92,12 +86,14 @@
     extraGroups = [ "networkmanager" "wheel" "adbusers" "libvirtd" "users" ];
   };
 
-  services.pcscd.enable = true;
   programs.gnupg.agent = {
-    enable = true;
+    enable = false;
     # pinentryPackage = "pinentry-gtk2";
     enableSSHSupport = false;
   };
+
+  # Android Debug Bridge
+  programs.adb.enable = true;
 
   # VR
   # services.wivrn = {
@@ -126,8 +122,6 @@
   #     };
   #   };
   # };
-
-  programs.adb.enable = true;
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
@@ -171,6 +165,5 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
-
 }
 
