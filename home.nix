@@ -41,6 +41,7 @@
     ./home-manager/quickshell/quickshell.nix
     ./home-manager/steam/steam.nix
     ./home-manager/term-shell/term-shell.nix
+    ./home-manager/term-shell/fastfetch/fastfetch.nix
     ./home-manager/vscode/vscode.nix
     ./home-manager/firefox.nix
     ./home-manager/git.nix
