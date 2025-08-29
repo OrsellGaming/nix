@@ -31,7 +31,11 @@
     programs.zsh = {
         enable = true;
         enableCompletion = true;
-        autosuggestion.enable = true;
+        autosuggestion = {
+            enable = true;
+            highlight = "fg=#A8A8A8,underline";
+            strategy = [ "completion" ];
+        };
         syntaxHighlighting.enable = true;
 
         initContent = lib.mkOrder 500 ''
@@ -83,7 +87,7 @@
         clock24 = false;
         extraConfig = ''
         set -g default-command ${pkgs.zsh}/bin/zsh
-        set -g status-right "#[fg=orange,bg=black]%A, %d %b %Y %I:%M %p"
+        set -g status-right "#[fg=orange,bg=black]%A, %d %b %Y"
         set -g mouse on
         '';
     };
