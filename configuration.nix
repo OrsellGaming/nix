@@ -136,14 +136,27 @@
     tailscale
     gnupg
     btop
+    vlc
+    p7zip
+    imagemagick
+    file
+    brightnessctl # Laptop screen backlight and button controls # TODO: Implement this into Hyprland binds
+    iwgtk # Wi-Fi manager # 
+    keepassxc # Keyring Manager
   ];
-
-  environment.pathsToLink = [ "/share/zsh" ];
 
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+
+  services.pcscd.enable = true;
+
+  # Trackpad Natural Scrolling
+  services.libinput.touchpad.naturalScrolling = true;
+
+  # Enable CUPS to print documents.
+  services.printing.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
