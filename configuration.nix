@@ -32,7 +32,18 @@
   networking.wireless.iwd.enable = true;
 
   programs.hyprland.enable = true;
+
+  # Enable Hyprland with UWSM support.
   security.polkit.enable = true;
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true;
+    xwayland.enable = true;
+  };
+  # Universal Wayland Session Manager
+  programs.uwsm = {
+    enable = true;
+  };
 
   # Set your time zone.
   time.timeZone = "America/Los_Angeles";

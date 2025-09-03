@@ -35,9 +35,11 @@
     enable = true;
     package = null;
     portalPackage = null;
+    systemd.enable = false;
     settings = {
       exec-once = [
         "systemctl --user start hyprpolkitagent"
+        "systemctl --user enable --now waybar.service"
         "rog-control-center" # ASUS system control, supergfx and asusctl
         "1password --silent" # Startup 1Password in the background
         "~/.wallpapers/wallpaper-d.sh" # Wallpapers
@@ -55,6 +57,7 @@
       bind = [
         # Application menu
         "SUPER, SUPER_L, exec, pkill rofi || rofi -show drun"
+        "$mod, TAB, exec, pkill rofi || rofi -show window"
 
         # Lock computer
         "SUPER, l, exec, hyprlock"
@@ -184,7 +187,7 @@
 
       windowrule = [
         "opacity .95 override .95, class:Code"
-        "workspace 1, class:Code"
+        #"workspace 1, class:Code"
         "bordercolor rgb(6600a1) rgb(ff5100) 0deg rgb(6600a1) rgb(ff5100) 0deg,floating:1"
         "workspace special:magic, class:vesktop"
         "bordersize 0, pinned:1"
