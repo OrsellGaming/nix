@@ -15,5 +15,9 @@
     enable = true;
     enable32Bit = true;
   };
+
+  environment.systemPackages = with pkgs; [
+    steamcmd
+  ];
 }
 # This is not the only configuration for steam! check home-manager/steam
