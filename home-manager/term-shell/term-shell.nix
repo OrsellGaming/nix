@@ -4,7 +4,7 @@
     # TERMINAL EMULATOR
     programs.kitty = {
         enable = true;
-        # enableGitIntegration = true;
+        enableGitIntegration = true;
         shellIntegration.enableZshIntegration = true;
         font = {
             name = "JetBrainsMono Nerd Font";
@@ -24,7 +24,7 @@
     # CONFIG FILES FOR SHELL
     home.file = {
         ".p10k.zsh" = { source = ./.p10k.zsh; };
-        ".zshrc.override" = { source = ./.zshrc.override; }; #! Current unstable build of Home Manager causes a conflict.
+        ".zshrc.override" = { source = ./.zshrc.override; }; #! Current unstable build of Home Manager causes a conflict so this needs to get loaded after the one already included.
     };
 
     # TERMINAL SHELL
@@ -38,14 +38,18 @@
         };
         syntaxHighlighting.enable = true;
 
-        initContent = lib.mkOrder 500 ''
+        initContent = lib.mkOrder 500 '' # Start the theme as the first thing the shell should do.
             source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
             source ~/.zshrc.override
         '';
 
         shellAliases = {
-            nup = "nh os switch -- --show-trace";
+            logoutnow = "hyprctl dispatch exit";
+            nupdate = "nh os switch -- --show-trace";
+            nbuild = "nh os build -- --show-trace";
+            nboot = "nh os boot -- --show-trace";
             lg = "lazygit";
+            nukserver = "ssh orsell@10.0.0.112";
         };
 
         # plugins = [
@@ -90,11 +94,5 @@
         set -g status-right "#[fg=orange,bg=black]%A, %d %b %Y"
         set -g mouse on
         '';
-    };
-
-    # Good ole bash
-    programs.bash = {
-        enable = false;
-        bashrcExtra = "fastfetch";
     };
 }
