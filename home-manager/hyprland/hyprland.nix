@@ -50,7 +50,11 @@
         "[workspace special:magic silent] vesktop"
       ];
 
-      "monitor" = "eDP-1, 2560x1600@240, 0x0, 1";
+      "monitor" = [
+        "eDP-1, 2560x1600@240, 1920x0, 1"
+        "HDMI-A-1, 1920x1080@240.0, 0x230, 1.0"
+      ];
+
       "$terminal" = "kitty";
       "$mod" = "alt";
 

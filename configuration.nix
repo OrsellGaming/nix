@@ -12,11 +12,23 @@
       ./system-configuration/bootloader.nix
       ./system-configuration/cpu-power.nix
       # ./system-configuration/kde.nix
+      ./system-configuration/graphics.nix
       # ./system-configuration/sddm.nix
       ./system-configuration/steam.nix
       # ./system-configuration/tailscale.nix
       ./system-configuration/virtual-machines.nix
     ];
+
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelParams = [
+    # These flags are used to enable backlight control when the dGPU is working in hybrid mode
+    "i915.enable_dpcd_backlight=1"
+    "nvidia.NVreg_EnableBacklightHandler=0"
+    "nvidia.NVReg_RegistryDwords=EnableBrightnessControl=0"
+
+    
+    "nvidia-drm.modeset=1"
+  ];
 
   networking.hostName = "lambda-core"; # Define your hostname.
 
@@ -143,6 +155,7 @@
     tailscale
     gnupg
     btop # System prcocess viewer
+    nvitop # Nvidia specific process viewer
     vlc
     p7zip
     imagemagick
