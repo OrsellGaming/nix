@@ -23,7 +23,7 @@
 
       background = {
         monitor = "";
-        path = "../../wallpapers/fox.png;";
+        path = "~/.wallpapers/lockscreen.png";
         blur_passes = 1;
       };
 
