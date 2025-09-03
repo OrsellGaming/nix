@@ -25,13 +25,15 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
-  #networking.networkmanager.enable = true;
   networking.enableIPv6  = false;
   networking.nameservers = [ "1.1.1.1" ];
-  #networking.wireless.enable  = true;
-  networking.wireless.iwd.enable = true;
+  networking.networkmanager.enable = true;
+  networking.networkmanager.wifi.powersave = true;
 
-  programs.hyprland.enable = true;
+  # Open ports in the firewall.
+  # networking.firewall.allowedTCPPorts = [ ... ];
+  # networking.firewall.allowedUDPPorts = [ ... ];
+  networking.firewall.enable = false;
 
   # Enable Hyprland with UWSM support.
   security.polkit.enable = true;
@@ -140,34 +142,53 @@
     protonup-qt
     tailscale
     gnupg
-    btop
+    btop # System prcocess viewer
     vlc
     p7zip
     imagemagick
     file
     brightnessctl # Laptop screen backlight and button controls # TODO: Implement this into Hyprland binds
-    iwgtk # Wi-Fi manager # 
-    keepassxc # Keyring Manager
+    seahorse # GNOME keyring manager
+    teams-for-linux
   ];
+
+  programs.dconf.enable = true;
+  home-manager.users.orsell = {
+    dconf.settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
+  };
 
   # List services that you want to enable:
 
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+  services = {
+    # ASUS system services and packages
+    supergfxd = {
+        enable = true;
+        settings = {
+            mode = "Hybrid";
+            vfio_enable = true;
+            vfio_save = true;
+        };
+    };
+  
+    asusd = {
+      enable = true;
+      enableUserService = true;
+    };
 
-  services.pcscd.enable = true;
+    # Needed for store VS Code auth token and 1Password 2FA
+    gnome.gnome-keyring.enable = true;
 
-  # Trackpad Natural Scrolling
-  services.libinput.touchpad.naturalScrolling = true;
+    # Enable the OpenSSH daemon.
+    openssh.enable = true;
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
+    pcscd.enable = true;
 
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  networking.firewall.enable = true;
+    # Trackpad Natural Scrolling
+    libinput.touchpad.naturalScrolling = true;
+    
+    # Enable CUPS to print documents.
+    printing.enable = true;
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
