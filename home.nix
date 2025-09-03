@@ -21,7 +21,6 @@
     jdk21 # J*va
     quickemu # Easy VM management
     gimp
-    lazygit
     uget
     mpv # Media Player
     modrinth-app

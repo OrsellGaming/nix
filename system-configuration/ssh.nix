@@ -6,7 +6,7 @@
         startAgent = true;
         # Use 1Password to authenticate.
         extraConfig = ''
-        Host github.com
+        Host *
             IdentityAgent "~/.1password/agent.sock";
         '';
     };
