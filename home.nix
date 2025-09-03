@@ -48,6 +48,7 @@
     ./home-manager/nemo.nix
     ./home-manager/nh.nix
     ./home-manager/obs.nix
+    ./home-manager/rofi/rofi.nix
   ];
 
   # Secret Management

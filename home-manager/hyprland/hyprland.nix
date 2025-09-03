@@ -23,10 +23,6 @@
     jq # Used for detecting if a special workspace is active when switching to a numbered workspace
   ];
 
-  programs.rofi = {
-    enable = true;
-    theme = "material";
-  };
 
   home.pointerCursor = {
     gtk.enable = true;
