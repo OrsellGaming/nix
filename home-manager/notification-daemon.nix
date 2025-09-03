@@ -32,10 +32,10 @@
       text-color=#FFFFFF
 
       # Set width of notification popup.( value in px )
-      width=300
+      width=800
 
       # maximum height of notification( value in px )
-      height=110
+      height=300
 
       # margin of notification which is margin for the list of notification block( value in px ).
       outer-margin=1
