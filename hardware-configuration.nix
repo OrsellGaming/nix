@@ -10,22 +10,22 @@
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "vmd" "nvme" "usb_storage" "usbhid" "sd_mod" "rtsx_pci_sdmmc" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" "asus-armoury" ];
+  boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/aa3e5e29-bc45-4191-8013-b530a7771a79";
+    { device = "/dev/disk/by-uuid/a7a0e5cb-c791-40f6-98be-94e3bd4f583a";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/50B8-E2B4";
+    { device = "/dev/disk/by-uuid/30EC-CF95";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/0be838f0-da6f-44df-9d7d-fdf2d21d90c1"; }
+    [ { device = "/dev/disk/by-uuid/d0f60aed-9642-46e8-9c8b-d727638a9958"; }
     ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
@@ -33,7 +33,7 @@
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enp0s20f0u1.useDHCP = lib.mkDefault true;
+  # networking.interfaces.enp0s13f0u4u2c2.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlo1.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
