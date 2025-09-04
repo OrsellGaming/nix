@@ -49,6 +49,18 @@
 			version = "1.24.0";
 			sha256 = "2M7N4Ccw9FAaMmG36hGHi6i0i1qR+uPCSgXELAA03Xk=";
 		}
+		{
+			name = "cpptools";
+			publisher = "ms-vscode";
+			version = "1.26.3";
+			sha256 = "OWnjb1d1yXyygtVvUbPKGCXu4X78CVbqs4S2KBsfdyI=";
+		}
+		{
+			name = "cmake-tools";
+			publisher = "ms-vscode";
+			version = "1.21.36";
+			sha256 = "IqgYnesIz46WmJ7kR8LYnr2kkD33oiupi7CrcV6rGRg=";
+		}
     ];
 
     profiles.default.userSettings = {
