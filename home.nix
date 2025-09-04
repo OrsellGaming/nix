@@ -47,6 +47,7 @@
     ./home-manager/firefox.nix
     ./home-manager/gtk.nix
     ./home-manager/git.nix
+    ./home-manager/jetbrains.nix
     #./home-manager/nemo.nix
     ./home-manager/nh.nix
     ./home-manager/obs.nix
