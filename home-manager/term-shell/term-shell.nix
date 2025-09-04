@@ -45,7 +45,7 @@
 
         shellAliases = {
             logoutnow = "hyprctl dispatch exit";
-            nupdate = "nh os switch -- --show-trace";
+            nswitch = "nh os switch -- --show-trace";
             nbuild = "nh os build -- --show-trace";
             nboot = "nh os boot -- --show-trace";
             lg = "lazygit";
