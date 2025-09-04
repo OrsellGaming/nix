@@ -7,7 +7,6 @@
     [
       ./hardware-configuration.nix
 
-      ./system-configuration/1password.nix
       ./system-configuration/bootloader.nix
       ./system-configuration/cpu-power.nix
       ./system-configuration/greeter/greeter.nix
@@ -15,9 +14,7 @@
       ./system-configuration/graphics.nix
       # ./system-configuration/sddm.nix
       # ./system-configuration/sops/sops.nix
-      ./system-configuration/steam.nix
-      # ./system-configuration/tailscale.nix
-      ./system-configuration/virtual-machines.nix
+      ./system-applications/applications.nix
     ];
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -148,24 +145,6 @@
   #     };
   #   };
   # };
-
-  # List packages installed in system profile.
-  environment.systemPackages = with pkgs; [
-    wget
-    protonup-qt
-    tailscale
-    gnupg
-    btop # System prcocess viewer
-    nvitop # Nvidia Btop styled process viewer
-    vlc
-    p7zip
-    imagemagick
-    file
-    brightnessctl # Laptop screen backlight and button controls # TODO: Implement this into Hyprland binds
-    seahorse # GNOME keyring manager
-    teams-for-linux
-    thunderbird # Email Client
-  ];
 
   programs.dconf.enable = true;
   home-manager.users.orsell = {

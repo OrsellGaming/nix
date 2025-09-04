@@ -1,0 +1,28 @@
+{ pkgs, ... }:
+{
+    # List packages installed in system profile.
+    environment.systemPackages = with pkgs; [
+        wget
+        protonup-qt
+        tailscale
+
+        gnupg
+
+        btop # System prcocess viewer
+        
+        p7zip
+        imagemagick
+        file # Get file type from terminal
+        brightnessctl # Laptop screen backlight and button controls # TODO: Implement this into Hyprland binds
+        seahorse # GNOME keyring manager
+        teams-for-linux
+        thunderbird # Email Client
+    ];
+
+    imports = [
+        ./1password.nix
+        ./steam.nix
+        # ./tailscale.nix
+        ./virtual-machines.nix
+    ];
+}
