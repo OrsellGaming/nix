@@ -23,13 +23,15 @@
     gimp
     uget
     mpv # Media Player
+    vlc # Another Media Player
     modrinth-app
     pavucontrol # Volume Control
     kdePackages.kdenlive # Video Editor
     kdePackages.dolphin # File Manager
     kdePackages.kate # Small text editor
     bs-manager # Beat Saber Mod Manager
-    # Fonts
+        
+    # Fonts # TODO: There is a better way of doing this. Figure it out!
     nerd-fonts.jetbrains-mono
   ];
 

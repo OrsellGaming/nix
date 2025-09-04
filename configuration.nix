@@ -13,6 +13,7 @@
       # ./system-configuration/kde.nix
       ./system-configuration/graphics.nix
       # ./system-configuration/sddm.nix
+      ./system-configuration/services.nix
       # ./system-configuration/sops/sops.nix
       ./system-applications/applications.nix
     ];
@@ -110,9 +111,9 @@
   };
 
   programs.gnupg.agent = {
-    enable = false;
+    enable = true;
     # pinentryPackage = "pinentry-gtk2";
-    enableSSHSupport = false;
+    enableSSHSupport = true;
   };
 
   # Android Debug Bridge
@@ -147,42 +148,6 @@
   # };
 
   programs.dconf.enable = true;
-  home-manager.users.orsell = {
-    dconf.settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
-  };
-
-  # List services that you want to enable:
-
-  services = {
-    # ASUS system services and packages
-    supergfxd = {
-        enable = true;
-        settings = {
-            mode = "Hybrid";
-            vfio_enable = true;
-            vfio_save = true;
-        };
-    };
-  
-    asusd = {
-      enable = true;
-      enableUserService = true;
-    };
-
-    # Needed for store VS Code auth token and 1Password 2FA
-    gnome.gnome-keyring.enable = true;
-
-    # Enable the OpenSSH daemon.
-    openssh.enable = true;
-
-    pcscd.enable = true;
-
-    # Trackpad Natural Scrolling
-    libinput.touchpad.naturalScrolling = true;
-    
-    # Enable CUPS to print documents.
-    printing.enable = true;
-  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
