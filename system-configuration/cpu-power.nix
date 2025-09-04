@@ -25,19 +25,4 @@
             STOP_CHARGE_THRESH_BAT0 = 80; # 80 and above it stops charging
         };
     };
-
-    # ASUS system packages
-    services.supergfxd = {
-        enable = true;
-        settings = {
-            mode = "Hybrid";
-            vfio_enable = true;
-            vfio_save = true;
-        };
-    };
-    
-    services.asusd = {
-      enable = true;
-      enableUserService = true;
-    };
 }
