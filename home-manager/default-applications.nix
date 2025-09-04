@@ -5,7 +5,8 @@
       code = {
         name = "Visual Studio Code";
         genericName = "Code Editor";
-        exec = "codium %U";
+        exec = "code %U";
+        icon = "code";
         terminal = false;
         categories = [ "Application" ];
         mimeType = [ "text/html" "text/xml" ];
@@ -14,16 +15,26 @@
       vlc = {
         name = "VLC";
         genericName = "VLC Media Player";
+        exec = "vlc %U";
+        icon = "vlc";
+        terminal = false;
+        categories = [ "Application" ];
+        mimeType = [ "video/*" ];
+      };
+
+      mpv = {
+        name = "MPV";
+        genericName = "MPV";
         exec = "mpv %U";
         terminal = false;
         categories = [ "Application" ];
         mimeType = [ "video/*" ];
       };
 
-      nemo = {
-          name = "Nemo";
-          exec = "${pkgs.nemo-with-extensions}/bin/nemo";
-      };
+      # nemo = {
+      #     name = "Nemo";
+      #     exec = "${pkgs.nemo-with-extensions}/bin/nemo";
+      # };
 
       # kitty = {
       #   name = "kitty";
@@ -43,8 +54,8 @@
       defaultApplications = {
         "text/plain" = ["code.desktop"];
         "image/*" = ["gimp.desktop"];
-        "video/*" = ["vlc.desktop"];
-        "inode/directory" = [ "nemo.desktop" ];
+        "video/*" = ["mpv.desktop"];
+        "inode/directory" = [ "dolphin.desktop" ];
         "application/x-gnome-saved-search" = [ "nemo.desktop" ];
       };
     };
