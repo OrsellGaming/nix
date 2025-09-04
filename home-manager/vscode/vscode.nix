@@ -2,7 +2,7 @@
 {
   programs.vscode = {
     enable = true;
-	package = pkgs.vscodium;
+	# package = pkgs.vscodium; # TODO: Figure out Remote SSH with VSCodium
     profiles.default.extensions = with pkgs.vscode-extensions; [
       yzhang.markdown-all-in-one
       bbenoist.nix
