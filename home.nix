@@ -26,6 +26,8 @@
     modrinth-app
     pavucontrol # Volume Control
     kdePackages.kdenlive # Video Editor
+    kdePackages.dolphin # File Manager
+    kdePackages.kate # Small text editor
     bs-manager # Beat Saber Mod Manager
     # Fonts
     nerd-fonts.jetbrains-mono
@@ -45,13 +47,18 @@
     ./home-manager/firefox.nix
     ./home-manager/gtk.nix
     ./home-manager/git.nix
-    ./home-manager/nemo.nix
+    #./home-manager/nemo.nix
     ./home-manager/nh.nix
     ./home-manager/obs.nix
     ./home-manager/rofi/rofi.nix
   ];
 
   fonts.fontconfig.enable = true; # Allow HM to discover installed fonts.
+
+  # Environment variables set for the user.
+  home.sessionVariables = {
+    SSH_AUTH_SOCK = "$HOME/.1password/agent.sock";
+  };
 
   # Secret Management
   #sops = {

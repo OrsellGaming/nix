@@ -164,6 +164,7 @@
     brightnessctl # Laptop screen backlight and button controls # TODO: Implement this into Hyprland binds
     seahorse # GNOME keyring manager
     teams-for-linux
+    thunderbird # Email Client
   ];
 
   programs.dconf.enable = true;
