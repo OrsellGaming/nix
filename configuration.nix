@@ -156,7 +156,7 @@
     tailscale
     gnupg
     btop # System prcocess viewer
-    nvitop # Nvidia specific process viewer
+    nvitop # Nvidia Btop styled process viewer
     vlc
     p7zip
     imagemagick

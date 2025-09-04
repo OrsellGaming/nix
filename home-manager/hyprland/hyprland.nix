@@ -27,7 +27,7 @@
   home.pointerCursor = {
     gtk.enable = true;
     package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Amber";
+    name = "Bibata-Modern-Classic";
     size = 24;
   };
 
@@ -43,10 +43,12 @@
         "rog-control-center" # ASUS system control, supergfx and asusctl
         "1password --silent" # Startup 1Password in the background
         "~/.wallpapers/wallpaper-d.sh" # Wallpapers
+        "teams-for-linux"
         "[workspace 1 silent] kitty tmux"
         # "[workspace 1 silent] code"
         # "[workspace 2 silent] firefox"
         "[workspace 6 silent] kitty btop"
+        "[workspace 6 silent] kitty nvitop"
         "[workspace special:magic silent] vesktop"
       ];
 

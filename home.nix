@@ -43,12 +43,15 @@
     ./home-manager/term-shell/fastfetch/fastfetch.nix
     ./home-manager/vscode/vscode.nix
     ./home-manager/firefox.nix
+    ./home-manager/gtk.nix
     ./home-manager/git.nix
     ./home-manager/nemo.nix
     ./home-manager/nh.nix
     ./home-manager/obs.nix
     ./home-manager/rofi/rofi.nix
   ];
+
+  fonts.fontconfig.enable = true; # Allow HM to discover installed fonts.
 
   # Secret Management
   #sops = {

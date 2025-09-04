@@ -11,10 +11,6 @@
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game T>
   };
   hardware.steam-hardware.enable = true;
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-  };
 
   environment.systemPackages = with pkgs; [
     steamcmd
