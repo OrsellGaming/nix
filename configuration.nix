@@ -13,6 +13,7 @@
       # ./system-configuration/kde.nix
       ./system-configuration/graphics.nix
       # ./system-configuration/sddm.nix
+      ./system-configuration/networking.nix
       ./system-configuration/services.nix
       # ./system-configuration/sops/sops.nix
       ./system-applications/applications.nix
@@ -28,23 +29,6 @@
     
     "nvidia-drm.modeset=1"
   ];
-
-  networking.hostName = "lambda-core"; # Define your hostname.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  networking.enableIPv6  = false;
-  networking.nameservers = [ "1.1.1.1" ];
-  networking.networkmanager.enable = true;
-  networking.networkmanager.wifi.powersave = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  networking.firewall.enable = false;
 
   # Enable Hyprland with UWSM support.
   security.polkit.enable = true;
