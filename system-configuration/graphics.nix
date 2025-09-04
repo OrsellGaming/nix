@@ -1,6 +1,10 @@
 { config, lib, pkgs, ... }:
 {
 
+  environment.systemPackages = with pkgs; [
+    nvitop # Nvidia Btop styled process viewer
+  ];
+
   nixpkgs.config.packageOverrides = pkgs: {
     intel-vaapi-driver = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
   };
@@ -42,11 +46,11 @@
     # Enable this if you have graphical corruption issues or application crashes after waking
     # up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead 
     # of just the bare essentials.
-    powerManagement.enable = false;
+    powerManagement.enable = true;
 
     # Fine-grained power management. Turns off GPU when not in use.
     # Experimental and only works on modern Nvidia GPUs (Turing or newer).
-    powerManagement.finegrained = false;
+    powerManagement.finegrained = true;
 
     # Dynamic Boost. It is a technology found in NVIDIA Max-Q design laptops with RTX GPUs.
     # It intelligently and automatically shifts power between
@@ -87,17 +91,17 @@
   # NixOS specialization named 'nvidia-sync'. Provides the ability
   # to switch the Nvidia Optimus Prime profile
   # to sync mode during the boot process, enhancing performance.
-  specialisation = {
-    nvidia-sync.configuration = {
-      system.nixos.tags = [ "nvidia-sync" ];
-      hardware.nvidia = {
-        powerManagement.finegrained = lib.mkForce false;
+  # specialisation = {
+  #   nvidia-sync.configuration = {
+  #     system.nixos.tags = [ "nvidia-sync" ];
+  #     hardware.nvidia = {
+  #       powerManagement.finegrained = lib.mkForce false;
 
-        prime.offload.enable = lib.mkForce false;
-        prime.offload.enableOffloadCmd = lib.mkForce false;
+  #       prime.offload.enable = lib.mkForce false;
+  #       prime.offload.enableOffloadCmd = lib.mkForce false;
 
-        prime.sync.enable = lib.mkForce true;
-      };
-    };
-  };
+  #       prime.sync.enable = lib.mkForce true;
+  #     };
+  #   };
+  # };
 }
