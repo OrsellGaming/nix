@@ -71,6 +71,8 @@
 	  	"git.autofetch" = true;
 	  	"git.openRepositoryInParentFolders" = "always";
 	  
+		"makefile.configureOnOpen" = true;
+
 	  	"merge-conflict.autoNavigateNextConflict.enabled" = true;
 	  
 	  	"RainbowBrackets.depreciation-notice" = false;
