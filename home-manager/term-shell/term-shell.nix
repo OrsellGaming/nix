@@ -1,7 +1,7 @@
-# Terminal, shell, and other extensions.
+#* Terminal, shell, and other extensions.
 { pkgs, lib, ... }:
 {
-    # TERMINAL EMULATOR
+    #? TERMINAL EMULATOR
     programs.kitty = {
         enable = true;
         enableGitIntegration = true;
@@ -21,13 +21,13 @@
         };
     };
 
-    # CONFIG FILES FOR SHELL
+    #? CONFIG FILES FOR SHELL
     home.file = {
         ".p10k.zsh" = { source = ./.p10k.zsh; };
         ".zshrc.override" = { source = ./.zshrc.override; }; #! Current unstable build of Home Manager causes a conflict so this needs to get loaded after the one already included.
     };
 
-    # TERMINAL SHELL
+    #? TERMINAL SHELL
     programs.zsh = {
         enable = true;
         enableCompletion = true;
@@ -78,6 +78,7 @@
                 "github"
                 "git-lfs"
                 "git-prompt"
+                # TODO: Fix the below three plugins.
                 "viper-env"
                 "tmux-ssh-syncing"
                 "xxh-plugin-zsh-ohmyzsh"
@@ -85,7 +86,7 @@
         };
     };
 
-    # MULT-TERMINALS
+    #? MULT-TERMINALS
     programs.tmux = {
         enable = true;
         clock24 = false;

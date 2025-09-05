@@ -1,4 +1,5 @@
-{pkgs, ...}:
+#* GRUB Bootloader Configuration
+{ pkgs, ... }:
 {
   boot.loader = {
     efi = {

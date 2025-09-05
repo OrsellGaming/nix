@@ -1,4 +1,4 @@
-#? GTK Theming
+#* GTK Theming
 { pkgs, ... }:
 {
   gtk = {

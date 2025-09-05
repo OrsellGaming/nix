@@ -1,3 +1,4 @@
+#* Firefox
 { inputs, pkgs, ... }:
 {
   programs.firefox = let

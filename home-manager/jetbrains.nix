@@ -1,4 +1,4 @@
-# JetBrains IDE Programs
+#* JetBrains IDE Programs
 { pkgs, ... }:
 {
    home.packages = with pkgs; [
@@ -6,7 +6,7 @@
         jetbrains.clion
     ];
 
-    # JetBrains Remote Development System
+    #? JetBrains Remote Development System
     programs.jetbrains-remote = {
         enable = true;
         ides = [ # JetBrains IDEs to allow with the system

@@ -1,4 +1,4 @@
-#? Laptop CPU and Power Management
+#* Laptop CPU and Power Management
 { ... }:
 {
     # Prevent overheating with Intel CPUs

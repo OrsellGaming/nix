@@ -1,4 +1,4 @@
-#? SSH Config
+#* SSH Config
 { ... }:
 {
     programs.ssh = {

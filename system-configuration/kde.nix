@@ -1,6 +1,6 @@
-{config, ...}:
+#* KDE Plasma Configuration
+{ config, ...}:
 {
-  # KDE Plasma configuration
   services.desktopManager.plasma6.enable = true;
   # systemd.user.services.set-wallpaper = {
   #    enable = true;

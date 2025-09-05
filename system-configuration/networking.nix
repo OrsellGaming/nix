@@ -1,4 +1,4 @@
-#? Network Configuration for the system, both Wifi and Ethernet.
+#* Network Configuration for the system, both Wifi and Ethernet.
 { ... }:
 {
     networking = {
