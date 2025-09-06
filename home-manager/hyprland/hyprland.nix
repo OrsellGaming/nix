@@ -1,11 +1,11 @@
-# DISPLAY/WINDOW MANAGER
+#* DISPLAY/WINDOW MANAGER
 { pkgs, lib, ... }:
 {
   imports = [
-    ./hyprlock.nix
+    ./hyprlock.nix #? Hyprland Lock Screen
   ];
 
-  # WALLPAPERS
+  #? WALLPAPERS
   home.file = {
     ".wallpapers" = { source = ../../wallpapers; recursive = true; };
     ".wallpapers/wallpaper-d.sh" = { source = ./wallpaper-d.sh; executable = true; };
@@ -38,7 +38,7 @@
     systemd.enable = false;
     settings = {
       exec-once = [
-        "systemctl --user start hyprpolkitagent"
+        "systemctl --user enable --now hyprpolkitagent.service"
         "systemctl --user enable --now waybar.service"
         "rog-control-center" # ASUS system control, supergfx and asusctl
         "1password --silent" # Startup 1Password in the background
@@ -229,55 +229,9 @@
     '';
   };
 
-  # Screenshots
+  #? Screenshot Script For Hyprland
   home.file.".config/hypr/scripts/screenshot" = {
     executable = true;
-    text = ''
-      #!/run/current-system/sw/bin/bash
-
-      # Flags:
-
-      # r: region
-      # s: screen
-      #
-      # c: clipboard
-      # f: file
-      # i: interactive
-
-      # p: pixel
-
-      if [[ $1 == rc ]]; then
-        grim -g "$(slurp -b '#000000b0' -c '#00000000')" - | wl-copy
-        notify-send 'Copied to Clipboard' Screenshot
-
-      elif [[ $1 == rf ]]; then
-        mkdir -p ~/Pictures/Screenshots
-        filename=~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png
-        grim -g "$(slurp -b '#000000b0' -c '#00000000')" $filename
-        notify-send 'Screenshot Taken' $filename
-
-      elif [[ $1 == ri ]]; then
-        grim -g "$(slurp -b '#000000b0' -c '#00000000')" - | swappy -f -
-
-      elif [[ $1 == sc ]]; then
-        filename=~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png
-        grim - | wl-copy
-        notify-send 'Copied to Clipboard' Screenshot
-
-      elif [[ $1 == sf ]]; then
-        mkdir -p ~/Pictures/Screenshots
-        filename=~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png
-        grim $filename
-        notify-send 'Screenshot Taken' $filename
-
-      elif [[ $1 == si ]]; then
-        grim - | swappy -f -
-
-      elif [[ $1 == p ]]; then
-        color=$(hyprpicker -a)
-        wl-copy $color
-        notify-send 'Copied to Clipboard' $color
-      fi
-    '';
+    source = ./screenshot;
   };
 }
