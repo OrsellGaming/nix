@@ -100,37 +100,6 @@
     enableSSHSupport = true;
   };
 
-  # Android Debug Bridge
-  programs.adb.enable = true;
-
-  # VR
-  # services.wivrn = {
-  #   enable = true;
-  #   openFirewall = true;
-  #   defaultRuntime = true;
-  # # Config for WiVRn (https://github.com/WiVRn/WiVRn/blob/master/docs/configuration.md)
-  #   config = {
-  #     enable = true;
-  #     json = {
-  #       # 1.0x foveation scaling
-  #       scale = 1.0;
-  #       # 70 Mb/s
-  #       bitrate = 70000000;
-  #       encoders = [
-  #         {
-  #           encoder = "vulkan";
-  #           codec = "h264";
-  #           # 1.0 x 1.0 scaling
-  #           width = 1.0;
-  #           height = 1.0;
-  #           offset_x = 0.0;
-  #           offset_y = 0.0;
-  #         }
-  #       ];
-  #     };
-  #   };
-  # };
-
   programs.dconf.enable = true;
 
   # This value determines the NixOS release from which the default
@@ -141,4 +110,3 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
 }
-

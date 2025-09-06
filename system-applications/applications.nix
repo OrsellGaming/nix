@@ -24,5 +24,6 @@
         ./steam.nix
         # ./tailscale.nix
         ./virtual-machines.nix
+        ./vr.nix
     ];
 }
