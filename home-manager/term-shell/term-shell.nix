@@ -96,4 +96,10 @@
         set -g mouse on
         '';
     };
+
+    #? NixOS Command Helper
+    programs.nh = {
+        enable = true;
+        flake = "/home/orsell/nixos";
+    };
 }
