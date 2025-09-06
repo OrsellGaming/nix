@@ -39,6 +39,7 @@
     ./home-manager/hyprland/waybar.nix
     ./home-manager/notification-daemon.nix
     ./home-manager/quickshell/quickshell.nix
+    ./home-manager/rofi/rofi.nix
     ./home-manager/steam/steam.nix
     ./home-manager/term-shell/term-shell.nix
     ./home-manager/term-shell/fastfetch/fastfetch.nix
@@ -48,7 +49,6 @@
     ./home-manager/git.nix
     ./home-manager/jetbrains.nix
     ./home-manager/obs.nix
-    ./home-manager/rofi/rofi.nix
   ];
 
   fonts.fontconfig.enable = true; # Allow HM to discover installed fonts.
