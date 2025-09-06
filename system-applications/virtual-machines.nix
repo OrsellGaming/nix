@@ -1,5 +1,9 @@
 { pkgs, lib, ... }:
 {
+  home-manager.users.orsell.home.packages = with pkgs; [
+    quickemu # Easy VM management
+  ];
+
   environment.systemPackages = with pkgs; [
     spice-gtk
     virt-manager

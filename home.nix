@@ -19,7 +19,7 @@
     vpkedit
     bottles # Wine
     jdk21 # J*va
-    quickemu # Easy VM management
+    
     gimp
     uget
     mpv # Media Player
