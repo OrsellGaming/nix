@@ -17,6 +17,13 @@
         seahorse # GNOME keyring manager
         teams-for-linux
         thunderbird # Email Client
+
+        # TODO: Move these to repositories that actually need them, not actually globally decalre them.
+        # gcc
+        # libgcc
+        # clang
+        # cmake
+        # gnumake
     ];
 
     imports = [

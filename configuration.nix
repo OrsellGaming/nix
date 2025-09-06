@@ -20,14 +20,18 @@
     ];
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  # TODO: Figure out how to get asus armoury driver
+  # boot.extraModulePackages = with config.boot.kernelPackages; [
+   # asus-armoury # ASUS Armoury Crate driver
+  # ];
+
   boot.kernelParams = [
     # These flags are used to enable backlight control when the dGPU is working in hybrid mode
     "i915.enable_dpcd_backlight=1"
     "nvidia.NVreg_EnableBacklightHandler=0"
     "nvidia.NVReg_RegistryDwords=EnableBrightnessControl=0"
 
-    
-    "nvidia-drm.modeset=1"
+    #"nvidia-drm.modeset=1"
   ];
 
   # Enable Hyprland with UWSM support.
