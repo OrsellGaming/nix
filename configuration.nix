@@ -20,6 +20,7 @@
     ];
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.supportedFilesystems = [ "ntfs" ];
   # TODO: Figure out how to get asus armoury driver
   # boot.extraModulePackages = with config.boot.kernelPackages; [
    # asus-armoury # ASUS Armoury Crate driver

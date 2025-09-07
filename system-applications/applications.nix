@@ -9,6 +9,7 @@
         gnupg
 
         btop # System prcocess viewer
+        gparted
         
         p7zip
         imagemagick
@@ -17,6 +18,8 @@
         seahorse # GNOME keyring manager
         teams-for-linux
         thunderbird # Email Client
+
+        ntfs3g # To be able to format drives as NTFS
 
         # TODO: Move these to repositories that actually need them, not actually globally decalre them.
         # gcc

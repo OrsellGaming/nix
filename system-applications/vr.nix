@@ -22,6 +22,7 @@
         enable = true;
         openFirewall = true;
         defaultRuntime = true;
+        steam.importOXRRuntimes = true; #! I don't believe this is working but worth putting here just in case.
         # Config for WiVRn (https://github.com/WiVRn/WiVRn/blob/master/docs/configuration.md)
         config = {
             enable = true;
