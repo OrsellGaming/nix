@@ -9,7 +9,7 @@
   home.username = "orsell";
   home.homeDirectory = "/home/orsell";
 
-  # Packages that should be installed to the user profile.
+  #? Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     lutris
     gale
@@ -33,7 +33,6 @@
   ];
 
   imports = [
-    ./home-manager/default-applications.nix
     ./home-manager/discord/nixcord.nix
     ./home-manager/hyprland/hyprland.nix
     ./home-manager/hyprland/waybar.nix
@@ -49,14 +48,15 @@
     ./home-manager/git.nix
     ./home-manager/jetbrains.nix
     ./home-manager/obs.nix
+    ./home-manager/xdg.nix
   ];
 
-  fonts.fontconfig.enable = true; # Allow HM to discover installed fonts.
+  fonts.fontconfig.enable = true; #? Allow HM to discover installed fonts.
 
-  # Environment variables set for the user.
+  #? Environment variables set for the user.
   home.sessionVariables = {
-    SSH_AUTH_SOCK = "$HOME/.1password/agent.sock";
-    NIXOS_OZONE_WL = "1"; #? To make sure that electron applications use Wayland instead of X11
+    SSH_AUTH_SOCK = "$HOME/.1password/agent.sock"; #? Makes sure 1Password is used with SSH
+    NIXOS_OZONE_WL = "1"; #? To encourage electron applications to use Wayland instead of X11
   };
 
   # Secret Management
@@ -80,6 +80,6 @@
   # changes in each release.
   home.stateVersion = "24.11";
 
-  # Let home Manager install and manage itself.
+  #? Let home Manager install and manage itself.
   programs.home-manager.enable = true;
 }

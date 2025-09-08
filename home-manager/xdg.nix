@@ -1,3 +1,4 @@
+#? XDG Configuration
 { pkgs, ... }:
 {
   xdg = {
@@ -49,14 +50,18 @@
       # };
     };
 
+    #menus.enable = true;
+
+    mime.enable = true;
     mimeApps = {
       enable = true;
       defaultApplications = {
         "text/plain" = ["code.desktop"];
-        "image/*" = ["gimp.desktop"];
+        "image/*" = ["gwenview.desktop"];
         "video/*" = ["mpv.desktop"];
         "inode/directory" = [ "dolphin.desktop" ];
-        "application/x-gnome-saved-search" = [ "nemo.desktop" ];
+        "application/x-gnome-saved-search" = [ "dolphin.desktop" ];
+        # "applicaiton/zip" = [ "" ]; # TODO: Get zip file assosiation working.
       };
     };
   };

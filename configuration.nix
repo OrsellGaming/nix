@@ -95,13 +95,13 @@
   # Define a user account.
   users.users.orsell = {
     isNormalUser = true;
-    description = "Some Nerd's Account";
+    description = "Some Nerd's Account"; #? This also behaves as the user accounts name.
     extraGroups = [ "networkmanager" "wheel" "adbusers" "libvirtd" "users" ];
   };
 
   programs.gnupg.agent = {
     enable = true;
-    # pinentryPackage = "pinentry-gtk2";
+    pinentryPackage = pkgs.pinentry-qt;
     enableSSHSupport = true;
   };
 
