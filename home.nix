@@ -24,11 +24,24 @@
     mpv # Media Player
     vlc # Another Media Player
     pavucontrol # Volume Control
+
     kdePackages.kdenlive # Video Editor
     kdePackages.dolphin # File Manager
+    kdePackages.qtsvg # Add support for SVG icons in Dolphin
+    kdePackages.kio-fuse # To mount remote filesystems via FUSE
+    kdePackages.kio-extras # Extra protocols support (sftp, fish and more)
     kdePackages.kate # Small text editor
-        
-    # Fonts # TODO: There is a better way of doing this. Figure it out!
+    kdePackages.powerdevil # Manages the power consumption settings of a Plasma shell
+    kdePackages.kwallet # The KDE wallet
+    kdePackages.print-manager # Printing and printer manager
+    kdePackages.kservice
+    kdePackages.gwenview # Image viewer by KDE
+    kdePackages.ark # Graphical file compression/decompression utility
+
+    kdePackages.okular # PDF viewer
+    libreoffice-qt6-fresh # The LibreOffice suite
+    obsidian # Markdown knowledge base program
+
     nerd-fonts.jetbrains-mono
   ];
 
