@@ -3,21 +3,20 @@
 #? and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, lib, inputs, ... }: {
-  imports =
-    [
-      ./hardware-configuration.nix
+  imports = [
+    ./hardware-configuration.nix
 
-      ./system-configuration/bootloader.nix
-      ./system-configuration/cpu-power.nix
-      ./system-configuration/greeter/greeter.nix
-      # ./system-configuration/kde.nix
-      ./system-configuration/graphics.nix
-      # ./system-configuration/sddm.nix
-      ./system-configuration/networking.nix
-      ./system-configuration/services.nix
-      # ./system-configuration/sops/sops.nix
-      ./system-applications/applications.nix
-    ];
+    ./system-configuration/bootloader.nix
+    ./system-configuration/cpu-power.nix
+    ./system-configuration/graphics.nix
+    ./system-configuration/kde.nix
+    ./system-configuration/networking.nix
+    ./system-configuration/regreet.nix
+    ./system-configuration/services.nix
+    # ./system-configuration/sops/sops.nix
+
+    ./system-applications/applications.nix
+  ];
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.supportedFilesystems = [ "ntfs" ];
