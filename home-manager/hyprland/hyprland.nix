@@ -6,6 +6,7 @@
   ];
 
   #? WALLPAPERS
+  # TODO: Implement rest of backgrounds
   home.file = {
     ".wallpapers" = { source = ../../wallpapers; recursive = true; };
     ".wallpapers/wallpaper-d.sh" = { source = ./wallpaper-d.sh; executable = true; };
@@ -23,7 +24,7 @@
     jq # Used for detecting if a special workspace is active when switching to a numbered workspace
   ];
 
-
+  # TODO: Change out cursor, as well as change the one GTK applicaitons use to the same so its consistent.
   home.pointerCursor = {
     gtk.enable = true;
     package = pkgs.bibata-cursors;
@@ -36,7 +37,7 @@
     package = null;
     portalPackage = null;
     systemd.enable = false;
-    settings = {
+    settings = { # TODO: Port this all to a hyprland.conf file instead of all being crammed into here.
       exec-once = [
         "systemctl --user enable --now hyprpolkitagent.service"
         "systemctl --user enable --now waybar.service"
@@ -53,7 +54,7 @@
       ];
 
       "monitor" = [
-        "eDP-1, 2560x1600@240, 1920x0, 1"
+        "eDP-2, 2560x1600@240.0, 1920x0, 1.0"
         "HDMI-A-1, 1920x1080@240.0, 0x230, 1.0"
       ];
 
