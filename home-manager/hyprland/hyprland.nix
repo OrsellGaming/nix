@@ -43,8 +43,8 @@
         "systemctl --user enable --now waybar.service"
         "rog-control-center" # ASUS system control, supergfx and asusctl
         "1password --silent" # Startup 1Password in the background
-        "~/.wallpapers/wallpaper-d.sh" # Wallpapers
         "teams-for-linux"
+        "~/.wallpapers/wallpaper-d.sh" # Wallpapers
         "[workspace 1 silent] kitty tmux"
         # "[workspace 1 silent] code"
         # "[workspace 2 silent] firefox"
