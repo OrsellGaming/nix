@@ -13,7 +13,7 @@
   in {
     # TODO: Replace policies and preferences with those seen in BetterFox.
     enable = true;
-    nativeMessagingHosts = with pkgs; [ uget-integrator ];
+    nativeMessagingHosts = with pkgs; [ uget-integrator ff2mpv ];
     policies = {
       DisableTelemetry = true;
       DisableFirefoxStudies = true;
@@ -61,6 +61,7 @@
         darkreader
         link-cleaner
         privacy-badger
+        ff2mpv
       ];
     };
   };
