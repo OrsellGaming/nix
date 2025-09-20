@@ -64,6 +64,10 @@
     ];
 
     profiles.default.userSettings = {
+		"C_Cpp.errorSquiggles" = "enabled";
+
+		"debug.onTaskErrors" = "showErrors";
+
 	  	"editor.selectionClipboard" = false;
 	  	"editor.fontFamily" = "JetBrainsMono Nerd Font";
       	"files.autoSave" = "afterDelay";

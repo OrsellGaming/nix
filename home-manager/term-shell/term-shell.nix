@@ -50,25 +50,37 @@
             nboot = "nh os boot -- --show-trace";
             lg = "lazygit";
             nukserver = "ssh orsell@10.0.0.112";
+            windows10 = "quickemu --vm ~/Desktop/VMs/windows-10-English-United-States.conf --display spice";
         };
 
-        # plugins = [
-        #     {
-        #         # name = "zsh-powerlevel10k";
-        #         # src = pkgs.fetchFromGitHub {
-        #         #     owner = "romkatv";
-        #         #     repo = "powerlevel10k";
-        #         #     rev = "v1.20.0";
-        #         #     sha256 = "ES5vJXHjAKw/VHjWs8Au/3R+/aotSbY7PWnWAMzCR8E=";
-        #         # };
-        #     }
+        plugins = [
+            #{
+                # name = "zsh-powerlevel10k";
+                # src = pkgs.fetchFromGitHub {
+                #     owner = "romkatv";
+                #     repo = "powerlevel10k";
+                #     rev = "v1.20.0";
+                #     sha256 = "ES5vJXHjAKw/VHjWs8Au/3R+/aotSbY7PWnWAMzCR8E=";
+                # };
+            #}
 
-        #     # {
-        #     #     name = "";
-        #     #     src = pkgs.zsh-powerlevel10k;
-        #     #     file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-        #     # };
-        # ];
+            # {
+            #     name = "";
+            #     src = pkgs.zsh-powerlevel10k;
+            #     file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+            # };
+
+            { # TODO: Isn't working.
+                name = "zsh-nix-shell";
+                file = "nix-shell.plugin.zsh";
+                src = pkgs.fetchFromGitHub {
+                    owner = "chisui";
+                    repo = "zsh-nix-shell";
+                    rev = "v0.8.0";
+                    sha256 = "Z6EYQdasvpl1P78poj9efnnLj7QQg13Me8x1Ryyw+dM=";
+                };
+            }
+        ];
 
         oh-my-zsh = {
             enable = true;
@@ -95,6 +107,11 @@
         set -g status-right "#[fg=orange,bg=black]%A, %d %b %Y"
         set -g mouse on
         '';
+    };
+
+    #? NixOS direnv
+    programs.direnv = {
+        enable = true;
     };
 
     #? NixOS Command Helper
