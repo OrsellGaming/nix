@@ -75,6 +75,9 @@
         # Selective Screenshot
         "SUPER_SHIFT, s, exec, ~/.config/hypr/scripts/screenshot rc"
 
+        # Selective Screenshot to File # TODO
+        # "SUPER_SHIFT,"
+
         # OBS Clip Hotkey
         ", F8, pass, class:^(com\.obsproject\.Studio)$"
 

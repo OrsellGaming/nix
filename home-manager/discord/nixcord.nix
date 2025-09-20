@@ -2,7 +2,7 @@
 {
 
   imports = [
-    #./slasher.nix
+    #./slasher.nix # TODO: Maybe repurpose for something else.
   ];
 
   # vencord theme
@@ -13,6 +13,7 @@
     };
   };
 
+  # TODO: Replace this Vencord setup with the one I usually have that is in the cloud.
   programs.nixcord = {
     enable = true;  # enable Nixcord. Also installs discord package
     vesktop.enable = true;

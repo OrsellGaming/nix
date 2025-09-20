@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{ pkgs, ... }:
 {
   programs.vscode = {
     enable = true;
@@ -6,7 +6,7 @@
     profiles.default.extensions = with pkgs.vscode-extensions; [
       yzhang.markdown-all-in-one
       bbenoist.nix
-    ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+    ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [ # TODO: Port all plugins from usual setup to here.
 	    {
 	    	name = "vscript-snippets";
 	    	publisher = "Baptiste-Martinet";

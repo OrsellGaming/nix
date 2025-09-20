@@ -15,7 +15,8 @@
         imagemagick
         file # Get file type from terminal
         brightnessctl # Laptop screen backlight and button controls # TODO: Implement this into Hyprland binds
-        seahorse # GNOME keyring manager
+        seahorse # GNOME keyring manager # TODO: Replace with kwallet keyring
+
         teams-for-linux
         thunderbird # Email Client
 

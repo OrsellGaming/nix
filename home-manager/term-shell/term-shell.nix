@@ -24,7 +24,7 @@
     #? CONFIG FILES FOR SHELL
     home.file = {
         ".p10k.zsh" = { source = ./.p10k.zsh; };
-        ".zshrc.override" = { source = ./.zshrc.override; }; #! Current unstable build of Home Manager causes a conflict so this needs to get loaded after the one already included.
+        ".zshrc.override" = { source = ./.zshrc.override; }; #! Current unstable build of Home Manager causes a conflict because it already has a zshrc file for some reason, so this needs to get loaded after the one already included.
     };
 
     #? TERMINAL SHELL
@@ -79,9 +79,9 @@
                 "git-lfs"
                 "git-prompt"
                 # TODO: Fix the below three plugins.
-                "viper-env"
-                "tmux-ssh-syncing"
-                "xxh-plugin-zsh-ohmyzsh"
+                # "viper-env"
+                # "tmux-ssh-syncing"
+                # "xxh-plugin-zsh-ohmyzsh"
             ];
         };
     };

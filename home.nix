@@ -45,6 +45,12 @@
     nerd-fonts.jetbrains-mono
   ];
 
+  # TODO: Figure out how to disable bottles warning message.
+  # programs.bottles = {
+  #   enable = true;
+  #   removeWarningPopup = true;
+  # };
+
   imports = [
     ./home-manager/discord/nixcord.nix
     ./home-manager/hyprland/hyprland.nix

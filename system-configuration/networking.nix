@@ -11,6 +11,7 @@
         enableIPv6  = false;
         nameservers = [ "1.1.1.1" "8.8.8.8" ];
         
+        # TODO: Wifi is not auto reconnecting on system wake from sleep.
         networkmanager = {
             enable = true;
             wifi = {

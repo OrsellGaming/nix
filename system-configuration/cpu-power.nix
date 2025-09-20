@@ -5,6 +5,7 @@
     services.thermald.enable = true;
 
     # Laptop power and battery settings
+    # TODO: See if I could make this work again,
     services.power-profiles-daemon.enable = false;
     services.tlp = {
         enable = false;
