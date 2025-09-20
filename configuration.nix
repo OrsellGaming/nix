@@ -21,18 +21,19 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.supportedFilesystems = [ "ntfs" ];
   # TODO: Figure out how to get asus armoury driver
-  # boot.extraModulePackages = with config.boot.kernelPackages; [
-   # asus-armoury # ASUS Armoury Crate driver
   # ];
-
-  boot.kernelParams = [
-    # These flags are used to enable backlight control when the dGPU is working in hybrid mode
-    "i915.enable_dpcd_backlight=1"
-    "nvidia.NVreg_EnableBacklightHandler=0"
-    "nvidia.NVReg_RegistryDwords=EnableBrightnessControl=0"
-
-    #"nvidia-drm.modeset=1"
+  #? Enable virtual camera for OBS.
+  boot.extraModulePackages = with config.boot.kernelPackages; [
+    v4l2loopback
+    # asus-armoury # ASUS Armoury Crate driver
   ];
+  boot.kernelModules = [ "v4l2loopback" ];
+  boot.extraModprobeConfig = ''
+    options v4l2loopback devices=1 video_nr=1 card_label="OBS Cam" exclusive_caps=1
+  '';
+  # boot.initrd.kernelModules = [
+  #   "nvidia_drm" "nvidia_modeset" "nvidia" "nvidia_uvm"
+  # ];
 
   # Enable Hyprland with UWSM support.
   security.polkit.enable = true;
@@ -109,7 +110,9 @@
   nix.gc.options = "--delete-older-than 7d";
 
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+  };
 
   # Define a user account.
   users.users.orsell = {
