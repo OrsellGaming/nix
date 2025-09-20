@@ -63,10 +63,10 @@
     ./home-manager/term-shell/fastfetch/fastfetch.nix
     ./home-manager/vscode/vscode.nix
     ./home-manager/firefox.nix
-    ./home-manager/gtk.nix
     ./home-manager/git.nix
     ./home-manager/jetbrains.nix
     ./home-manager/obs.nix
+    ./home-manager/system-theme.nix
     ./home-manager/xdg.nix
   ];
 
