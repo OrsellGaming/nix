@@ -1,6 +1,13 @@
 #* System Graphics Systems, Both Intel and Nvidia, along with OpenGL and PRIME configuration.
 { config, lib, pkgs, ... }:
 {
+  boot.kernelParams = [
+    #? These flags are used to enable backlight control when the dGPU is working in hybrid mode
+    "i915.enable_dpcd_backlight=1"
+    "nvidia.NVreg_EnableBacklightHandler=0"
+    "nvidia.NVReg_RegistryDwords=EnableBrightnessControl=0"
+  ];
+
   environment.systemPackages = with pkgs; [
     nvitop # Nvidia Btop styled process viewer
   ];

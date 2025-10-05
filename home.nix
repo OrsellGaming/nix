@@ -75,7 +75,6 @@
   #? Environment variables set for the user.
   home.sessionVariables = {
     SSH_AUTH_SOCK = "$HOME/.1password/agent.sock"; #? Makes sure 1Password is used with SSH
-    NIXOS_OZONE_WL = "1"; #? To encourage electron applications to use Wayland instead of X11
   };
 
   # Secret Management
