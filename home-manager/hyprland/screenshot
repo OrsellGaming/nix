@@ -17,8 +17,9 @@ filename = ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png
 
 #? Screenshot selected region and copy to clipboard
 if [[ $1 == rc ]]; then
-    grim -g "$(slurp -b '#000000b0' -c '#00000000')" - | wl-copy
-    notify-send 'Copied to Clipboard' Screenshot
+    # grim -g "$(slurp -b '#000000b0' -c '#00000000')" - | wl-copy
+    grimblast --freeze copy area
+    notify-send 'Copied Screenshot to Clipboard'
 
 #? Screenshot selected region and save to file.
 elif [[ $1 == rf ]]; then

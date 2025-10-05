@@ -16,12 +16,13 @@
   home.packages = with pkgs; [
     hyprpolkitagent # Authentication Manager
     mpvpaper # Video Wallpaper Manager
-    grim # Screenshot utils (x3)
+    #grim # Screenshot utils (x3)
     slurp
+    grimblast
+    flameshot
     swappy
     wl-clipboard
     font-awesome
-    catppuccin-cursors.mochaSapphire
     jq # Used for detecting if a special workspace is active when switching to a numbered workspace
   ];
 
@@ -41,20 +42,23 @@
     settings = { # TODO: Port this all to a hyprland.conf file instead of all being crammed into here.
       exec-once = [
         "systemctl --user enable --now hyprpolkitagent.service"
+        "systemctl --user enable --now hypridle.service"
         "systemctl --user enable --now waybar.service"
-        "rog-control-center" # ASUS system control, supergfx and asusctl
-        "1password --silent" # Startup 1Password in the background
-        "teams-for-linux"
-        "~/.wallpapers/wallpaper-d.sh" # Wallpapers
+        "rog-control-center" # ASUS system control, supergfx and asusctl.
+        "1password --silent" # Startup 1Password in the background.
+        "~/.wallpapers/wallpaper-d.sh" # Wallpapers.
         "[workspace 1 silent] kitty tmux"
-        # "[workspace 1 silent] code"
-        # "[workspace 2 silent] firefox"
-        "[workspace 6 silent] kitty btop"
-        "[workspace 6 silent] kitty nvitop"
+        "[workspace 1 silent] code"
+        "[workspace 2 silent] firefox"
+        "[workspace 9 silent] kitty btop"
+        "[workspace 9 silent] kitty nvitop"
         "[workspace special:magic silent] vesktop"
+        "[workspace special:magic silent] teams-for-linux"
+        "[workspace special:magic silent] thunderbird"
       ];
 
       "monitor" = [
+        "eDP-1, 2560x1600@240.0, 1920x0, 1.0"
         "eDP-2, 2560x1600@240.0, 1920x0, 1.0"
         "HDMI-A-1, 1920x1080@240.0, 0x230, 1.0"
       ];
@@ -75,9 +79,7 @@
 
         # Selective Screenshot
         "SUPER_SHIFT, s, exec, ~/.config/hypr/scripts/screenshot rc"
-
-        # Selective Screenshot to File # TODO
-        # "SUPER_SHIFT,"
+        #"SUPER_SHIFT, s, exec, flameshot gui --clipboard"
 
         # OBS Clip Hotkey
         ", F8, pass, class:^(com\.obsproject\.Studio)$"
@@ -94,7 +96,7 @@
         "$mod, p, pin"
 
         # Floating windows
-        "alt, f, togglefloating"
+        "SUPER, f, togglefloating"
 
         # Execution
         # ", code:87, exec, ~/.discord-slasher.sh 0" # Orsell
@@ -105,15 +107,15 @@
         # ", code:85, exec, ~/.discord-slasher.sh 2 1"
         
         # Move application between workspaces
-        "control SHIFT, 1, movetoworkspace, 1"
-        "control SHIFT, 2, movetoworkspace, 2"
-        "control SHIFT, 3, movetoworkspace, 3"
-        "control SHIFT, 4, movetoworkspace, 4"
-        "control SHIFT, 9, movetoworkspace, 9" 
-        "control SHIFT, 5, movetoworkspace, 5"
-        "control SHIFT, 6, movetoworkspace, 6"
-        "control SHIFT, 7, movetoworkspace, 7"
-        "control SHIFT, 8, movetoworkspace, 8"
+        "SUPER_SHIFT, 1, movetoworkspace, 1"
+        "SUPER_SHIFT, 2, movetoworkspace, 2"
+        "SUPER_SHIFT, 3, movetoworkspace, 3"
+        "SUPER_SHIFT, 4, movetoworkspace, 4"
+        "SUPER_SHIFT, 9, movetoworkspace, 9"
+        "SUPER_SHIFT, 5, movetoworkspace, 5"
+        "SUPER_SHIFT, 6, movetoworkspace, 6"
+        "SUPER_SHIFT, 7, movetoworkspace, 7"
+        "SUPER_SHIFT, 8, movetoworkspace, 8"
 
         # Overlayed workspace (like steam ingame overlay)
         "$mod, d, togglespecialworkspace, magic"
@@ -121,31 +123,31 @@
         "$mod CONTROL, d, movetoworkspace, 1"
 
         # Workspaces
-        "control, 1, workspace, 1"
-        "control, 2, workspace, 2"
-        "control, 3, workspace, 3"
-        "control, 4, workspace, 4"
-        "control, 5, workspace, 5"
-        "control, 6, workspace, 6"
-        "control, 7, workspace, 7"
-        "control, 8, workspace, 8"
-        "control, 9, workspace, 9"
-        "alt, mouse_down, workspace, e-1"
-        "alt, mouse_up, workspace, e+1"
+        "SUPER, 1, workspace, 1"
+        "SUPER, 2, workspace, 2"
+        "SUPER, 3, workspace, 3"
+        "SUPER, 4, workspace, 4"
+        "SUPER, 5, workspace, 5"
+        "SUPER, 6, workspace, 6"
+        "SUPER, 7, workspace, 7"
+        "SUPER, 8, workspace, 8"
+        "SUPER, 9, workspace, 9"
+        "SUPER, mouse_down, workspace, e-1"
+        "SUPER, mouse_up, workspace, e+1"
 
         # Hide Special workspaces if active
         # Taken from https://www.reddit.com/r/hyprland/comments/1b6bf39/comment/ktfscyz/
-        "control, 1, exec, hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .specialWorkspace.name' | sed 's/special://' | xargs -I [] hyprctl dispatch togglespecialworkspace []"
-        "control, 2, exec, hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .specialWorkspace.name' | sed 's/special://' | xargs -I [] hyprctl dispatch togglespecialworkspace []"
-        # "control, 3, exec, hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .specialWorkspace.name' | sed 's/special://' | xargs -I [] hyprctl dispatch togglespecialworkspace []"
-        "control, 4, exec, hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .specialWorkspace.name' | sed 's/special://' | xargs -I [] hyprctl dispatch togglespecialworkspace []"
-        "control, 5, exec, hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .specialWorkspace.name' | sed 's/special://' | xargs -I [] hyprctl dispatch togglespecialworkspace []"
-        "control, 6, exec, hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .specialWorkspace.name' | sed 's/special://' | xargs -I [] hyprctl dispatch togglespecialworkspace []"
-        "control, 7, exec, hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .specialWorkspace.name' | sed 's/special://' | xargs -I [] hyprctl dispatch togglespecialworkspace []"
-        "control, 8, exec, hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .specialWorkspace.name' | sed 's/special://' | xargs -I [] hyprctl dispatch togglespecialworkspace []"
-        "control, 9, exec, hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .specialWorkspace.name' | sed 's/special://' | xargs -I [] hyprctl dispatch togglespecialworkspace []"
-        "alt, mouse_down, exec, hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .specialWorkspace.name' | sed 's/special://' | xargs -I [] hyprctl dispatch togglespecialworkspace []"
-        "alt, mouse_up, exec, hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .specialWorkspace.name' | sed 's/special://' | xargs -I [] hyprctl dispatch togglespecialworkspace []"
+        "SUPER, 1, exec, hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .specialWorkspace.name' | sed 's/special://' | xargs -I [] hyprctl dispatch togglespecialworkspace []"
+        "SUPER, 2, exec, hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .specialWorkspace.name' | sed 's/special://' | xargs -I [] hyprctl dispatch togglespecialworkspace []"
+        # "SUPER, 3, exec, hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .specialWorkspace.name' | sed 's/special://' | xargs -I [] hyprctl dispatch togglespecialworkspace []"
+        "SUPER, 4, exec, hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .specialWorkspace.name' | sed 's/special://' | xargs -I [] hyprctl dispatch togglespecialworkspace []"
+        "SUPER, 5, exec, hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .specialWorkspace.name' | sed 's/special://' | xargs -I [] hyprctl dispatch togglespecialworkspace []"
+        "SUPER, 6, exec, hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .specialWorkspace.name' | sed 's/special://' | xargs -I [] hyprctl dispatch togglespecialworkspace []"
+        "SUPER, 7, exec, hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .specialWorkspace.name' | sed 's/special://' | xargs -I [] hyprctl dispatch togglespecialworkspace []"
+        "SUPER, 8, exec, hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .specialWorkspace.name' | sed 's/special://' | xargs -I [] hyprctl dispatch togglespecialworkspace []"
+        "SUPER, 9, exec, hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .specialWorkspace.name' | sed 's/special://' | xargs -I [] hyprctl dispatch togglespecialworkspace []"
+        "SUPER, mouse_down, exec, hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .specialWorkspace.name' | sed 's/special://' | xargs -I [] hyprctl dispatch togglespecialworkspace []"
+        "SUPER, mouse_up, exec, hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .specialWorkspace.name' | sed 's/special://' | xargs -I [] hyprctl dispatch togglespecialworkspace []"
 
       ];
 
@@ -212,12 +214,12 @@
     };
     extraConfig = ''
       # Toggle ignoring non-special workspace binds
-      bind=$mod, ESCAPE, exec, notify-send "Game mode enabled!"
+      bind=$mod, ESCAPE, exec, notify-send "Game Mode Enabled!"
       bind=$mod, ESCAPE, submap, gamemode
       submap = gamemode
 
       # Toggle off
-      bind=$mod, ESCAPE, exec, notify-send "Game mode disabled!"
+      bind=$mod, ESCAPE, exec, notify-send "Game Mode Disabled!"
       bind=$mod, ESCAPE, submap, reset
 
       # Keep overlay workspace
@@ -231,10 +233,19 @@
 
       # End of special bind set
       submap = reset
+
+      # Fixes issue with Jetbrains where it struggles with moving tabs and issues with hiding other windows because it thinks there's no input.
+      # fix tooltips (always have a title of `win.<id>`)
+      windowrulev2 = noinitialfocus, class:^(.*jetbrains.*)$, title:^(win.*)$
+      windowrulev2 = nofocus, class:^(.*jetbrains.*)$, title:^(win.*)$
+      # fix tab dragging (always have a single space character as their title)
+      windowrulev2 = noinitialfocus, class:^(.*jetbrains.*)$, title:^\\s$
+      windowrulev2 = nofocus, class:^(.*jetbrains.*)$, title:^\\s$
     '';
   };
 
   #? Screenshot Script For Hyprland
+  # TODO: Update this script file to use flameshot and grimblast
   home.file.".config/hypr/scripts/screenshot" = {
     executable = true;
     source = ./screenshot;
