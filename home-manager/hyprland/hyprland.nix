@@ -2,6 +2,7 @@
 { pkgs, lib, ... }:
 {
   imports = [
+    ./hypridle.nix #? Hyprland "Screen Saver"
     ./hyprlock.nix #? Hyprland Lock Screen
   ];
 
