@@ -58,9 +58,11 @@
       ];
 
       "monitor" = [
-        "eDP-1, 2560x1600@240.0, 1920x0, 1.0"
-        "eDP-2, 2560x1600@240.0, 1920x0, 1.0"
-        "HDMI-A-1, 1920x1080@240.0, 0x230, 1.0"
+        "eDP-1, 2560x1600@240, 1920x0, 1.0"
+        "eDP-2, 2560x1600@240, 1920x0, 1.0" # For some reason, I believe it was when I was tweaking NVIDIA settings, it made a seperate display screen for when it's driven by the GPU.
+        "HDMI-A-1, 1920x1080@240, auto-left, 1.0" # Home LG monitor
+        "desc:ViewSonic Corporation VA2451 SERIES T1Y134120750, 1920x1080@60, auto-right, 1.0" # DigiPen monitor.
+        ", preferred, auto-right, 1.0" # Any new monitors will be placed to the right of all monitors with its preferred resoluttion.
       ];
 
       "$terminal" = "kitty";
