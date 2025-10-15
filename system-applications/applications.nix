@@ -1,3 +1,4 @@
+#? Handling system wide software.
 { pkgs, ... }:
 {
     # List packages installed in system profile.
@@ -23,7 +24,7 @@
         thunderbird # Email Client
         maestral-gui
 
-        parsec-bin
+        parsec-bin # Parsec client, it does not host.
 
         gparted
         ntfs3g # NTFS support
