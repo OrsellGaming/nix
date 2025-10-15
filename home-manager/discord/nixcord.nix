@@ -48,7 +48,6 @@
         gameActivityToggle.enable = true;
         gifPaste.enable = true;
         greetStickerPicker.enable = true;
-        hideAttachments.enable = true;
         imageLink.enable = true;
         implicitRelationships.enable = true;
         memberCount.enable = true;

@@ -42,6 +42,8 @@
     libreoffice-qt6-fresh # The LibreOffice suite
     obsidian # Markdown knowledge base program
 
+    gitkraken
+
     nerd-fonts.jetbrains-mono
   ];
 

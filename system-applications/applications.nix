@@ -3,13 +3,15 @@
     # List packages installed in system profile.
     environment.systemPackages = with pkgs; [
         wget
-        tree
+        tree # display directories in a tree like format
         file # Get file type from terminal
-        p7zip
-        zip
+        p7zip # 7zip tool
+        zip # normal zip tool
         imagemagick
         gnupg
         btop # System prcocess viewer
+
+        meld
 
         protonup-qt
         #tailscale # TODO: Get this working.
@@ -19,6 +21,9 @@
 
         teams-for-linux
         thunderbird # Email Client
+        maestral-gui
+
+        parsec-bin
 
         gparted
         ntfs3g # NTFS support
